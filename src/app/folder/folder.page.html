@@ -1,33 +1,4 @@
-<ion-header [translucent]="true">
-<!--- <img style="margin-right:120%; margin-top: 5%"   src="assets/icon/logo.png"  height='40' width='200'/>--> 
-<ion-text style="font-size: 40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">INOVATECH </ion-text>  
-<ion-button  style="block-size:30%; margin-top:-12%; margin-left: 65%; font-size: 12px; " fill="clear"> CRIAR CONTA </ion-button>
-<ion-button  style="block-size:30%; margin-top:-11%; margin-left: 70%; font-size: 12px; " fill="clear"> LOGIN </ion-button>
-<ion-toolbar>
- 
-    <ion-buttons   style="margin-top:-5%"  slot="start">
-      
-      <ion-menu-button  ></ion-menu-button>
-    </ion-buttons>
 
-    <!-- Barra de  pesquisa -->
-   
-      <ion-searchbar style="margin-top: -5%;" (ionChange)="getItems($event)" placeholder='Pesquisar' showCancelButton="focus"></ion-searchbar>
-      <ion-list *ngIf="isItemAvailable"> <!-- TEMOS QUE INSERIR OS ITEM E O NOMES DOS MESMO PARA DEPOIS APARECER A SUGESTAO-->
-        <ion-item *ngFor="let item of items">{{ item }}</ion-item>
-      </ion-list>
-      <ion-buttons>
-          <ion-button  style="color:rgb(0, 0, 0); background-color: white; margin-left: 80% ; margin-top:-25%"  ion-button outline item-end  ion-button (click)="carrinho()">
-          <ion-icon  name="cart"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-
-  
-    
-
-
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
 
