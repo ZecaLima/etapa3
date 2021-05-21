@@ -9,13 +9,17 @@ import { NavController } from '@ionic/angular';
 export class CriarcontaPage implements OnInit {
 
   constructor(public nav: NavController) { }
-  
+
 
   ngOnInit() {
   }
 
  voltar(){
     this.nav.navigateForward('entrada');
+
+  }
+  login(){
+    this.nav.navigateForward('login');
 
   }
 }
