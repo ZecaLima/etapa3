@@ -1,14 +1,14 @@
-<ion-header style="background-color: rgb(248, 120, 0);" [translucent]="true">
+<ion-header style="background-color: rgb(61, 66, 150, 1);" [translucent]="true">
  
   <!--- <img style="margin-right:120%; margin-top: 5%"   src="assets/icon/logo.png"  height='40' width='200'/>--> 
   <ion-text style="color:white;font-size: 40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">INOVATECH </ion-text>  
   <ion-button  style="color: white;block-size:30%; margin-top:-12%; margin-left: 65%; font-size: 12px; "  [routerLink]="['/criarconta']" fill="clear"> CRIAR CONTA </ion-button>
-  <ion-button  style="color:white; block-size:30%; margin-top:-11%; margin-left: 70%; font-size: 12px; " fill="clear"> LOGIN </ion-button>
+  <ion-button  style="color:white; block-size:30%; margin-top:-11%; margin-left: 70%; font-size: 12px; " [routerLink]="['/login']" fill="clear"> LOGIN </ion-button>
 
   <ion-toolbar color="rgb(87, 98, 255)" >    
       <ion-buttons    slot="start">
         
-        <ion-menu-button  style="background-color: rgb(248, 120, 0); margin-top: -30%;" ></ion-menu-button> 
+        <ion-menu-button  style="background-color: rgb(61, 66, 150, 1); margin-top: -30%;" ></ion-menu-button> 
         
       </ion-buttons>
     
@@ -19,7 +19,7 @@
           <ion-item *ngFor="let item of items">{{ item }}</ion-item>
         </ion-list>
         <ion-buttons>
-            <ion-button  style="background-color: rgb(248, 120, 0);color:rgb(255, 255, 255);margin-left: 80% ; margin-top:-15%"  ion-button outline item-end  ion-button (click)="carrinho()">
+            <ion-button  style="background-color: rgb(61, 66, 150, 1);color:rgb(255, 255, 255);margin-left: 80% ; margin-top:-15%"  ion-button outline item-end  ion-button (click)="carrinho()">
             <ion-icon  name="cart"></ion-icon>
           </ion-button>
         </ion-buttons>

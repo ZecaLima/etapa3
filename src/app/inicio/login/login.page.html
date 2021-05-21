@@ -1,6 +1,5 @@
 <ion-header style="background-color: rgb(61, 66, 150, 1);" [translucent]="true">
- 
-  <!--- <img style="margin-right:120%; margin-top: 5%"   src="assets/icon/logo.png"  height='40' width='200'/>--> 
+   <!--- <img style="margin-right:120%; margin-top: 5%"   src="assets/icon/logo.png"  height='40' width='200'/>--> 
   <ion-text style="color:white;font-size: 40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">INOVATECH </ion-text>  
   <ion-button  style="color: white;block-size:30%; margin-top:-12%; margin-left: 65%; font-size: 12px; "  [routerLink]="['/criarconta']" fill="clear"> CRIAR CONTA </ion-button>
   <ion-button  style="color:white; block-size:30%; margin-top:-11%; margin-left: 70%; font-size: 12px; "  [routerLink]="['/login']" fill="clear"> LOGIN </ion-button>
@@ -24,22 +23,12 @@
       </ion-toolbar>
 
    
-      <ion-button  color= "rgb(255, 210, 168)" style="background-color: rgb(161, 165, 241, 0.425);color:rgb(255, 255, 255)"  expand="full"  (click)="voltar()">
+      <ion-button  color= "rgb(255, 210, 168)" style="background-color: rgba(161, 165, 241, 0.425);color:rgb(255, 255, 255)"  expand="full"  (click)="voltar()">
       <ion-icon style="margin-right:0%;" name="arrow-back-outline"></ion-icon>
       VOLTAR AO INÍCIO </ion-button>
-
-
-
-
-  </ion-header>
-
-
-
-
-
+      </ion-header>
 
 <ion-content>
-
   <ion-grid class="grid1">
     
     <ion-row class="row1">
@@ -58,21 +47,7 @@
 <div class="contaier-login">
   <ion-grid>
   <form>
-    <ion-item lines="full">
-      <ion-label position="floating">Nome</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-    <ion-item lines="full">
-      <ion-label position="floating"> Apelido </ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-    <ion-item lines="full">
-      <ion-label position="floating">Data de Nascimento</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY  "   placeholder='DIA/MÊS/ANO'> </ion-datetime>
-    </ion-item>
-    
+  
 
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
@@ -86,7 +61,7 @@
 
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Registar</ion-button>
+        <ion-button type="submit" color="danger" expand="block">Iniciar sessão</ion-button>
       </ion-col>
     </ion-row>
   </form>

@@ -20,8 +20,8 @@ export class EntradaPage implements OnInit {
   public async ionSlideDidChange(): Promise<void> {
     const index = await this.slider.getActiveIndex();
    }
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   constructor(public nav: NavController) { }
-  
 
   ngOnInit() {
   }
@@ -30,7 +30,10 @@ export class EntradaPage implements OnInit {
     this.nav.navigateForward('criarconta');
 
   }
+  login(){
+    this.nav.navigateForward('login');
 
+  }
 
 
 }
