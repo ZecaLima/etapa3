@@ -8,13 +8,17 @@ import { EntradaPageRoutingModule } from './entrada-routing.module';
 
 import { EntradaPage } from './entrada.page';
 import { ViewChild } from '@angular/core';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EntradaPageRoutingModule
+    EntradaPageRoutingModule,
+    Ng2SearchPipeModule
   ],
   declarations: [EntradaPage]
 })

@@ -20,7 +20,16 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./inicio/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'fav',
+    loadChildren: () => import('./inicio/fav/fav.module').then( m => m.FavPageModule)
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('./inicio/cart/cart.module').then( m => m.CartPageModule)
   }
+
 
 
 

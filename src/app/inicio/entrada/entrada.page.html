@@ -19,8 +19,9 @@
           <ion-item *ngFor="let item of items">{{ item }}</ion-item>
         </ion-list>
         <ion-buttons>
-            <ion-button  style="background-color: rgb(61, 66, 150, 1);color:rgb(255, 255, 255);margin-left: 80% ; margin-top:-15%"  ion-button outline item-end  ion-button (click)="carrinho()">
-            <ion-icon  name="cart"></ion-icon>
+            <ion-button  style="background-color: rgb(61, 66, 150, 1);color:rgb(255, 255, 255);margin-left: 80% ; margin-top:-15%"   (click)="openCart()">
+              <ion-badge *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+              <ion-icon size="large" slot="icon-only"  name="cart"></ion-icon>
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
@@ -41,4 +42,53 @@
         <img  src="assets/aspi2.jpg"  style="width:100%;height:auto" >
       </ion-slide>
     </ion-slides>
+
+<!--
+   <ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    <ion-card-title>   {{ product.name }} - ${{ product.price }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+  </ion-card-content>
+</ion-card>
   </ion-content>
+-->
+    <div *ngFor="let cat of items "  class="category-block">
+   
+   
+      <ion-row no-padding class="category-banner">
+        <ion-col text-left button tappable  align-self-center>
+          {{ cat.category }} 
+        
+        </ion-col>
+      </ion-row>
+   
+      <ion-slides [options]="sliderConfig" >
+        <ion-slide  *ngFor="let product of cat.products ">
+          <div>
+            <ion-card   >
+              <ion-card-header>
+                <ion-card-title>
+                  {{ product.name}} - ${{ product.price}}
+                </ion-card-title>
+                
+                <ion-card-content>
+                
+                  <img  src={{product.img}}   > 
+                
+                  <ion-button expand="full" (click)="addToCart(product)">Adicionar</ion-button>
+                </ion-card-content>
+              </ion-card-header>
+            </ion-card>
+          </div>
+        </ion-slide>
+      </ion-slides>
+
+      
+
+   
+    </div>
+  

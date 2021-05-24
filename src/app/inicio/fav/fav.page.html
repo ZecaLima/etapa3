@@ -1,0 +1,77 @@
+<ion-header style="background-color: rgb(61, 66, 150, 1);" [translucent]="true">
+  <!--- <img style="margin-right:120%; margin-top: 5%"   src="assets/icon/logo.png"  height='40' width='200'/>--> 
+ <ion-text style="color:white;font-size: 40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">INOVATECH </ion-text>  
+ <ion-button  style="color: white;block-size:30%; margin-top:-12%; margin-left: 65%; font-size: 12px; "  [routerLink]="['/criarconta']" fill="clear"> CRIAR CONTA </ion-button>
+ <ion-button  style="color:white; block-size:30%; margin-top:-11%; margin-left: 70%; font-size: 12px; "  [routerLink]="['/login']" fill="clear"> LOGIN </ion-button>
+
+ <ion-toolbar color="rgb(87, 98, 255)" >    
+     <ion-buttons    slot="start">
+        <ion-menu-button  style="background-color: rgb(61, 66, 150, 1); margin-top: -30%;" ></ion-menu-button> 
+             </ion-buttons>
+   
+     <!-- Barra de  pesquisa -->
+      
+     <ion-searchbar style="margin-top: -5%; " (ionChange)="getItems($event)" placeholder='Pesquisar' showCancelButton="focus"></ion-searchbar>
+     <ion-list *ngIf="isItemAvailable"> <!-- TEMOS QUE INSERIR OS ITEM E O NOMES DOS MESMO PARA DEPOIS APARECER A SUGESTAO-->
+       <ion-item *ngFor="let item of items">{{ item }}</ion-item>
+     </ion-list>
+       <ion-buttons>
+         <ion-button  style="background-color: rgb(61, 66, 150, 1);color:rgb(255, 255, 255);margin-left: 80% ; margin-top:-15%"  ion-button outline item-end  ion-button (click)="carrinho()">
+         <ion-icon  name="cart"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+     </ion-toolbar>
+
+  
+     <ion-button  color= "rgb(255, 210, 168)" style="background-color: rgba(161, 165, 241, 0.425);color:rgb(255, 255, 255)"  expand="full"  (click)="voltar()">
+     <ion-icon style="margin-right:0%;" name="arrow-back-outline"></ion-icon>
+     VOLTAR AO INÍCIO </ion-button>
+     </ion-header>
+
+<ion-content>
+<ion-card class="card-style"  >
+  <ion-card-header>
+    <ion-card-title>
+ 
+    </ion-card-title>
+    
+    <ion-card-content>
+
+
+      <ion-slides #slider pager="true" [options]="slideOpts" (ionSlideDidChange)='ionSlideDidChange()'>
+        <ion-slide>
+        
+          <img  src="assets/tablet.jpg"    style="width:100%;height:auto" >
+        </ion-slide>
+        <ion-slide>
+          <img  src="assets/tablet.jpg"  style="width:100%;height:auto" >
+        </ion-slide>
+     
+      </ion-slides>
+
+      <ion-text style="margin-bottom: 10% ; color: black;">
+             <h1> TABLER HSM 16</h1>       
+        <h2> kjdncjkdncfkjdnkd ncnkjds cdm </h2>
+        <p> Preço: 345,00€ ou em 3x sem juros</p>
+      </ion-text>
+
+        <ion-icon   name="heart-outline" style="margin-left: 10%; margin-top: 10%; " ></ion-icon> 
+ 
+         <ion-icon  name="share-social-sharp" style="margin-left:30% ;"></ion-icon>
+         <ion-icon  name="cart" style="margin-left: 30%;"></ion-icon>
+    
+          
+      <ion-button color="dark" style="color: black; outline-color: black; font-size: 65%; " color-activated fill="outline" class="btn" (click)="showMovementReport()">FAVORITO</ion-button>
+
+      <div *ngIf="toggled" >
+        <button style="background-color:rgb(0, 124, 0)" *ngFor="let item of getMovementPages" ion-item no-lines></button>
+    </div>
+
+
+        <ion-button  color="dark" style="color: black;border-bottom-color: black; outline-color: black; font-size: 65%;margin-left: 5%; " fill="outline" >PARTILHAR</ion-button>
+      <ion-button  color="dark" style="color: black; outline-color: black; font-size: 65%; margin-left: 6%;  "fill="outline"   (click)="addToCart(product)">ADICIONAR</ion-button>
+    </ion-card-content>
+  </ion-card-header>
+</ion-card>
+
+</ion-content>
