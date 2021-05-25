@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -8,15 +8,36 @@ import { NavController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(public nav: NavController) { }
+  constructor(public nav: NavController, public alertCtrl: AlertController) { }
+  async loginsuc() {
+    const alert = await this.alertCtrl.create({
 
+      subHeader: 'Login efetuado com sucesso!',
+      message: 'Escolhe uma das ações',
+      backdropDismiss: false,
+      buttons: [{
+        text: 'Continuar compras',
+        handler: () => {
+          this.nav.navigateForward('entrada');
+        }
+      },
+      {
+        text: 'Conta',
+        handler: () => {
+
+        }
+      }
+      ]
+    });
+    await alert.present();
+  }
   ngOnInit() {
   }
-  criarcontas(){
+  criarcontas() {
     this.nav.navigateForward('criarconta');
 
   }
-  voltar(){
+  voltar() {
     this.nav.navigateForward('entrada');
 
   }

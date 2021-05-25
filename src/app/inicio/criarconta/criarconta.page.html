@@ -1,37 +1,46 @@
 <ion-header style="background-color: rgb(61, 66, 150, 1);" [translucent]="true">
- 
-  <!--- <img style="margin-right:120%; margin-top: 5%"   src="assets/icon/logo.png"  height='40' width='200'/>--> 
-  <ion-text style="color:white;font-size: 40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">INOVATECH </ion-text>  
-  <ion-button  style="color: white;block-size:30%; margin-top:-12%; margin-left: 65%; font-size: 12px; "  [routerLink]="['/criarconta']" fill="clear"> CRIAR CONTA </ion-button>
-  <ion-button  style="color:white; block-size:30%; margin-top:-11%; margin-left: 70%; font-size: 12px; "  [routerLink]="['/login']" fill="clear"> LOGIN </ion-button>
 
-  <ion-toolbar color="rgb(87, 98, 255)" >    
-      <ion-buttons    slot="start">
-         <ion-menu-button  style="background-color: rgb(61, 66, 150, 1); margin-top: -30%;" ></ion-menu-button> 
-              </ion-buttons>
-    
-      <!-- Barra de  pesquisa -->
-       
-      <ion-searchbar style="margin-top: -5%; " (ionChange)="getItems($event)" placeholder='Pesquisar' showCancelButton="focus"></ion-searchbar>
-      <ion-list *ngIf="isItemAvailable"> <!-- TEMOS QUE INSERIR OS ITEM E O NOMES DOS MESMO PARA DEPOIS APARECER A SUGESTAO-->
-        <ion-item *ngFor="let item of items">{{ item }}</ion-item>
-      </ion-list>
-        <ion-buttons>
-          <ion-button  style="background-color: rgb(61, 66, 150, 1);color:rgb(255, 255, 255);margin-left: 80% ; margin-top:-15%"  ion-button outline item-end  ion-button (click)="carrinho()">
-          <ion-icon  name="cart"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-      </ion-toolbar>
+  <!--- <img style="margin-right:120%; margin-top: 5%"   src="assets/icon/logo.png"  height='40' width='200'/>-->
+  <ion-text style="color:white;font-size: 40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">
+    INOVATECH </ion-text>
+  <ion-button style="color: white;block-size:30%; margin-top:-12%; margin-left: 65%; font-size: 12px; "
+    [routerLink]="['/criarconta']" fill="clear"> CRIAR CONTA </ion-button>
+  <ion-button style="color:white; block-size:30%; margin-top:-11%; margin-left: 70%; font-size: 12px; "
+    [routerLink]="['/login']" fill="clear"> LOGIN </ion-button>
 
-   
-      <ion-button  color= "rgb(255, 210, 168)" style="background-color: rgb(161, 165, 241, 0.425);color:rgb(255, 255, 255)"  expand="full"  (click)="voltar()">
-      <ion-icon style="margin-right:0%;" name="arrow-back-outline"></ion-icon>
-      VOLTAR AO INÍCIO </ion-button>
+  <ion-toolbar color="rgb(87, 98, 255)">
+    <ion-buttons slot="start">
+      <ion-menu-button style="background-color: rgb(61, 66, 150, 1); margin-top: -30%;"></ion-menu-button>
+    </ion-buttons>
+
+    <!-- Barra de  pesquisa -->
+
+    <ion-searchbar style="margin-top: -5%; " (ionChange)="getItems($event)" placeholder='Pesquisar'
+      showCancelButton="focus"></ion-searchbar>
+    <ion-list *ngIf="isItemAvailable">
+      <!-- TEMOS QUE INSERIR OS ITEM E O NOMES DOS MESMO PARA DEPOIS APARECER A SUGESTAO-->
+      <ion-item *ngFor="let item of items">{{ item }}</ion-item>
+    </ion-list>
+    <ion-buttons>
+      <ion-button
+        style="background-color: rgb(61, 66, 150, 1);color:rgb(255, 255, 255);margin-left: 80% ; margin-top:-15%"
+        ion-button outline item-end ion-button (click)="carrinho()">
+        <ion-icon name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+  <ion-button color="rgb(255, 210, 168)" style="background-color: rgb(161, 165, 241, 0.425);color:rgb(255, 255, 255)"
+    expand="full" (click)="voltar()">
+    <ion-icon style="margin-right:0%;" name="arrow-back-outline"></ion-icon>
+    VOLTAR AO INÍCIO
+  </ion-button>
 
 
 
 
-  </ion-header>
+</ion-header>
 
 
 
@@ -39,58 +48,63 @@
 
 
 <ion-content>
-
+  
   <ion-grid class="grid1">
-    
+   
     <ion-row class="row1">
-        <ion-col>
+      
+      <ion-col>
 
-        </ion-col>
+      </ion-col>
     </ion-row>
 
     <ion-row class="row2">
-        <ion-col>
-
-        </ion-col>
-    </ion-row>
-
-</ion-grid>
-<div class="contaier-login">
-  <ion-grid>
-  <form>
-    <ion-item lines="full">
-      <ion-label position="floating">Nome</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-    <ion-item lines="full">
-      <ion-label position="floating"> Apelido </ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-    <ion-item lines="full">
-      <ion-label position="floating">Data de Nascimento</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY  "   placeholder='DIA/MÊS/ANO'> </ion-datetime>
-    </ion-item>
-    
-
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-    <ion-item lines="full">
-      <ion-label position="floating">Palavra-passe</ion-label>
-      <ion-input type="password" required></ion-input>
-    </ion-item>
-
-    <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Registar</ion-button>
+
       </ion-col>
     </ion-row>
-  </form>
-</ion-grid>
-</div>
+
+  </ion-grid>
+  <div class="contaier-login">
+    <img  src="assets/user2.png" style="height: 30%; width: 30%; margin-left: 35%; "   >
+    <ion-grid>
+      <form>
+        <ion-item lines="full">
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input type="text" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating"> Apelido </ion-label>
+          <ion-input type="text" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Data de Nascimento</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY  " placeholder='DIA/MÊS/ANO'> </ion-datetime>
+        </ion-item>
+
+
+        <ion-item lines="full">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="text" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Palavra-passe</ion-label>
+          <ion-input type="password" required></ion-input>
+        </ion-item>
+
+  
+ 
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="showMultipleAlertButtons()"  type="submit" color="dark" expand="full" fill="outline">Registar</ion-button>
+          </ion-col>
+        </ion-row>
+   
+      </form>
+    </ion-grid>
+  </div>
 
 </ion-content>
