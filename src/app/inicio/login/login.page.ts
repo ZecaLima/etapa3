@@ -13,7 +13,7 @@ export class LoginPage implements OnInit {
     const alert = await this.alertCtrl.create({
 
       subHeader: 'Login efetuado com sucesso!',
-      message: 'Escolhe uma das ações',
+      message: 'Escolha uma das ações',
       backdropDismiss: false,
       buttons: [{
         text: 'Continuar compras',
@@ -23,6 +23,11 @@ export class LoginPage implements OnInit {
       },
       {
         text: 'Conta',
+        handler: () => {
+        }
+      },
+      {
+        text: 'Cancelar',
         handler: () => {
 
         }

@@ -11,21 +11,27 @@ export class CriarcontaPage implements OnInit {
 
   constructor(public nav: NavController, public alertCtrl: AlertController) { }
 
-    async showMultipleAlertButtons() {
-    const  alert = await this.alertCtrl.create({
+  async showMultipleAlertButtons() {
+    const alert = await this.alertCtrl.create({
 
       subHeader: 'Conta criada com sucesso!',
-      message: 'Escolhe uma das ações',
+      message: 'Escolha uma das ações',
       backdropDismiss: false,
-      buttons: [  {
-        text:'Continuar compras',
-        handler:() => {
+      buttons: [{
+        text: 'Continuar compras',
+        handler: () => {
           this.nav.navigateForward('entrada');
         }
       },
       {
         text: 'Conta',
-        handler:()=>{
+        handler: () => {
+
+        }
+      },
+      {
+        text: 'Cancelar',
+        handler: () => {
 
         }
       }
@@ -37,11 +43,11 @@ export class CriarcontaPage implements OnInit {
   ngOnInit() {
   }
 
- voltar(){
+  voltar() {
     this.nav.navigateForward('entrada');
 
   }
-  login(){
+  login() {
     this.nav.navigateForward('login');
 
   }
