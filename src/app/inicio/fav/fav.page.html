@@ -44,6 +44,43 @@
       <ion-card-title>
           TABLET HSM 16
       </ion-card-title>
+      <!--PONTUAÇÃO-->
+      <div *ngIf="rate==0">
+        <ion-icon color="warning" name="star-outline" (click)="onRate(1)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
+
+      </div>
+      <div *ngIf="rate==1">
+        <ion-icon color="warning"  name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
+      
+      </div>
+      <div *ngIf="rate==2">
+        <ion-icon color="warning"  name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon color="warning"  name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
+    
+      </div>    
+      <div *ngIf="rate==3">
+        <ion-icon color="warning"  name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon color="warning"  name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning"  name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
+        
+      </div>
+  
+      <div *ngIf="rate==4">
+        <ion-icon color="warning" name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon color="warning"  name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning"  name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning"  name="star" (click)="onRate(4)"></ion-icon>
+     
+      </div>
       <ion-card-content>
         <ion-slides #slider pager="true" [options]="slideOpts" (ionSlideDidChange)='ionSlideDidChange()'>
           <ion-slide>
@@ -60,8 +97,8 @@
         </button>
 
         <!--ICONS + BOTÃO-->
-        <ion-icon name="share-social-sharp" style="margin-left:25% ;"></ion-icon>
-        <ion-icon name="cart" style="margin-left: 30%;"></ion-icon>
+        <ion-icon color="dark" name="share-social-sharp" style="margin-top: 5%; margin-left:25% ;"></ion-icon>
+        <ion-icon color="dark" name="cart" style="margin-top: 15%;margin-left: 30%;"></ion-icon>
       
         <ion-button id="1" #first ion-button color="dark" (click)="btnActivate(first)" 
         
@@ -80,6 +117,12 @@
               Google Mobile Services (GMS) não está disponível.  </h2>
             <p> Preço: 345,00€ ou em 3x sem juros</p>
             </ion-text>
+          <div *ngIf="x.showMore">
+                {{x.announcementDetails}}
+            </div>
+            <a (click)="x.showMore = !x.showMore">Show <span [innerHtml]="x.showMore ? 'less' : 'More'">  </span>
+            </a>
+        </div>
       </ion-card-content>
     </ion-card-header>
   </ion-card>

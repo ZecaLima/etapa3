@@ -16,6 +16,7 @@ export class FavPage implements OnInit {
   buttonColor: string;
   isActives = false;
   isActive = false;
+  rate = 0;
   botaoestado = [
     { state: false }
   ];
@@ -57,13 +58,18 @@ export class FavPage implements OnInit {
     this.nav.navigateForward('entrada');
 
   }
- btnActivate(ionicButton) {
+  btnActivate(ionicButton) {
 
-  if(ionicButton.color === 'dark')
-  {ionicButton.color =  'danger';}
-else
-  {ionicButton.color = 'dark';}
-}
+    if (ionicButton.color === 'dark') { ionicButton.color = 'danger'; }
+    else { ionicButton.color = 'dark'; }
+  }
+
+  onRate(rate) {
+    console.log(rate);
+    this.rate = rate;
+  }
+
+
 }
 
 
