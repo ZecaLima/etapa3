@@ -12,14 +12,13 @@ export class CartService {
       category: 'Promoção',
       expanded: true,
       products: [
-        { id: 0, name: 'Tablet Samsg', price: '800' , img: 'assets/slide1.jpg'},
-        { id: 1, name: 'Tablet LS', price: '500', img:'assets/aspi.jpg' },
-        { id: 2, name: 'Tablet Marts', price: '90' },
-        { id: 3, name: 'Portátil Amr', price: '756' }
+        { id: 0, name: 'Aspirador robô', price: '500', img:'assets/aspirador.jpg' },
+        { id: 1, name: 'Tablet Samsg', price: '800' , img: 'assets/tb.jpg'},
+        { id: 2, name: 'Portátil', price: '900' , img:'assets/mac.jpg'},
+        { id: 3, name: 'Portátil Amr', price: '756', img:'assets/tele.jpg' }
       ]
     }
-
-  ];
+    ];
   private cart = [];
 
   constructor() { }
