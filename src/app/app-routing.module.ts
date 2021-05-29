@@ -28,7 +28,8 @@ const routes: Routes = [
   {
     path: 'cart',
     loadChildren: () => import('./inicio/cart/cart.module').then( m => m.CartPageModule)
-  },  {
+  },
+  {
     path: 'partilhar',
     loadChildren: () => import('./inicio/partilhar/partilhar.module').then( m => m.PartilharPageModule)
   }
