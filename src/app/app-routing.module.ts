@@ -28,7 +28,19 @@ const routes: Routes = [
   {
     path: 'cart',
     loadChildren: () => import('./inicio/cart/cart.module').then( m => m.CartPageModule)
+  },  {
+    path: 'aspirador',
+    loadChildren: () => import('./produtos/aspirador/aspirador.module').then( m => m.AspiradorPageModule)
+  },
+  {
+    path: 'portatil',
+    loadChildren: () => import('./produtos/portatil/portatil.module').then( m => m.PortatilPageModule)
+  },
+  {
+    path: 'telemovel',
+    loadChildren: () => import('./produtos/telemovel/telemovel.module').then( m => m.TelemovelPageModule)
   }
+
 
 
 
