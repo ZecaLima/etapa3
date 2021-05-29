@@ -18,6 +18,17 @@ import { CartService } from 'src/app/cart.service';
 export class EntradaPage implements OnInit {
   cart = [];
   items = [];
+  toggled: boolean;
+  buttonColor: string;
+  isActives = false;
+  isActive = false;
+  rate = 0;
+  botaoestado = [
+    { state: false }
+  ];
+  botaofavorito = [
+    { state: false }
+  ];
 
   sliderConfig = {
     slidesPerView: 1,
@@ -29,7 +40,7 @@ export class EntradaPage implements OnInit {
   public slideOpts = {
     initialSlide: 1,
     speed: 400
-  };
+    };
 
   public async ionSlideDidChange(): Promise<void> {
     const index = await this.slider.getActiveIndex();
@@ -57,7 +68,9 @@ export class EntradaPage implements OnInit {
   openCart() {
     this.router.navigate(['cart']);
   }
+  pagefav(){
+    this.nav.navigateForward('fav');
 
-
+  }
 }
 

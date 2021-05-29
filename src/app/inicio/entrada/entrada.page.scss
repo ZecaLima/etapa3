@@ -82,9 +82,18 @@ ion-badge {
 }
  
 .category-banner {
-    border-left: 8px solid var(--ion-color-secondary);
+    border-left: 8px solid var(--ion-color-light);
     background: var(--ion-color-light);
     height: 40px;
     padding: 10px;
     font-weight: 500;
+}
+.small-card{
+  margin: 3px;
+  height: inherit;
+}
+
+
+.isActive {
+  color: red;
 }

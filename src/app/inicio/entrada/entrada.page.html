@@ -1,98 +1,138 @@
-<ion-header style="background-color: rgb(61, 66, 150, 1);" [translucent]="true">
- 
-  <!--- <img style="margin-right:120%; margin-top: 5%"   src="assets/icon/logo.png"  height=:40' width='200'/>--> 
-  <ion-text style="color:white;font-size::40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">INOVATECH </ion-text>  
-  <ion-button  style="color: white;block-size:30%; margin-top:-12%; margin-left: 65%; font-size: 12px; "  [routerLink]="['/criarconta']" fill="clear"> CRIAR CONTA </ion-button>
-  <ion-button  style="color:white; block-size:30%; margin-top:-11%; margin-left: 70%; font-size: 12px; " [routerLink]="['/login']" fill="clear"> LOGIN </ion-button>
+<!--"CABEÇALHO"-->
+<ion-header style="background-color: #3d4296;" [translucent]="true">
+  <!--- <img style="margin-right:120%; margin-top: 5%"   src="assets/icon/logo.png"  height='40' width='200'/>-->
+  <ion-text style="color:white;font-size: 40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">
+    INOVATECH </ion-text>
+  <ion-button style="color: white;block-size:30%; margin-top:-12%; margin-left: 65%; font-size: 12px; "
+    [routerLink]="['/criarconta']" fill="clear"> CRIAR CONTA </ion-button>
+  <ion-button style="color:white; block-size:30%; margin-top:-11%; margin-left: 70%; font-size: 12px; "
+    [routerLink]="['/login']" fill="clear"> LOGIN </ion-button>
 
-  <ion-toolbar color="rgb(87, 98, 255)" >    
-      <ion-buttons    slot="start">
-        
-        <ion-menu-button  style="background-color: rgb(61, 66, 150, 1); margin-top: -30%;" ></ion-menu-button> 
-        
-      </ion-buttons>
-    
-      <!-- Barra de  pesquisa -->
-     
-        <ion-searchbar style="margin-top: -5%; " (ionChange)="getItems($event)" placeholder='Pesquisar' showCancelButton="focus"></ion-searchbar>
-        <ion-list *ngIf="isItemAvailable"> <!-- TEMOS QUE INSERIR OS ITEM E O NOMES DOS MESMO PARA DEPOIS APARECER A SUGESTAO-->
-          <ion-item *ngFor="let item of items">{{ item }}</ion-item>
-        </ion-list>
-        <ion-buttons>
-            <ion-button  style="background-color: rgb(61, 66, 150, 1);color:rgb(255, 255, 255);margin-left: 80% ; margin-top:-15%"   (click)="openCart()">
-              <ion-badge *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
-              <ion-icon size="large" slot="icon-only"  name="cart"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-  </ion-header>
-  
+  <ion-toolbar color="rgb(87, 98, 255)">
+    <ion-buttons slot="start">
+      <ion-menu-button style="background-color: rgb(61, 66, 150, 1); margin-top: -30%;"></ion-menu-button>
+    </ion-buttons>
 
-	<ion-content>
-    <ion-slides #slider pager="true" [options]="slideOpts" (ionSlideDidChange)='ionSlideDidChange()'>
-      <ion-slide>
-        <img  src="assets/slide1.jpg"  style="width:100%;height:400px" >
-      </ion-slide>
-      <ion-slide>
-        <img  src="assets/slide3.jpg"  style="width:100%;height:400px" >
-      </ion-slide>
-      <ion-slide>
-        <img  src="assets/aspi2.jpg"  style="width:100%;height:400px" >
-      </ion-slide>
-      <ion-slide>
-        <img  src="assets/5.jpg"  style="width:100%;height:400px" >
-      </ion-slide>
-      <ion-slide>
-        <img  src="assets/6.jpg"  style="width:100%;height:400px" >
+    <!-- Barra de  pesquisa -->
+
+    <ion-searchbar style="margin-top: -5%; " (ionChange)="getItems($event)" placeholder='Pesquisar'
+      showCancelButton="focus"></ion-searchbar>
+    <ion-list *ngIf="isItemAvailable">
+      <!-- TEMOS QUE INSERIR OS ITEM E O NOMES DOS MESMO PARA DEPOIS APARECER A SUGESTAO-->
+      <ion-item *ngFor="let item of items">{{ item }}</ion-item>
+    </ion-list>
+    <ion-buttons>
+      <ion-button
+        style="background-color: rgb(61, 66, 150, 1);color:rgb(255, 255, 255);margin-left: 80% ; margin-top:-15%"
+        (click)="openCart()">
+        <ion-badge color="roxo" *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+        <ion-icon size="large" slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+
+  <ion-slides color="dark" #slider pager="true" [options]="slideOpts" (ionSlideDidChange)='ionSlideDidChange()'>
+    <ion-slide>
+      <img src="assets/slide/2.png" style="width:100%;">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/slide/3.png" style="width:100%;">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/slide/1_1.png" style="width:100%;">
+    </ion-slide>
+  </ion-slides>
+
+
+  <ion-card (click)="pagefav()" class="main-card">
+    <ion-card-content>
+      <ion-card-title>
+        TABLET SAMMSUNG
+      </ion-card-title>
+      <img src="assets/tablet2.jpg">
+
+      <!--ICONS + BOTÃO-->
+      <button style="background-color: white;  margin-left:22% ;" *ngFor="let botaoestado of botaoestado"
+        (click)="botaoestado.state = !botaoestado.state">
+        <ion-icon name="heart" style="margin-left: 15%; margin-top: 14%;" [class.isActive]="botaoestado.state">
+        </ion-icon>
+      </button>
+      <ion-icon color="dark" name="cart" style="margin-left: 40%;"></ion-icon>
+      <ion-button color="roxo" style="margin-left: 10%;" (click)="addToCart(product)">Favorito</ion-button>
+      <ion-button color="roxo" style="margin-left: 10%;" (click)="addToCart(product)">Adicionar</ion-button>
+      <ion-text style="margin-bottom: 10% ; color: black;">
+        <h2>
+          <p> <strong>SOBRE</strong></p>
+        </h2>
+        <h2> Tablet Sammsung MatePad <br> </h2>
+        <p> Preço: 345,00€ ou em 3x sem juros</p>
+      </ion-text>
+    </ion-card-content>
+
+  </ion-card>
+
+
+
+  <div *ngFor="let cat of items " class="category-block">
+    <ion-row no-padding class="category-banner">
+      <ion-col text-left button tappable align-self-center>
+        {{ cat.category }}
+      </ion-col>
+    </ion-row>
+    <ion-slides [options]="sliderConfig">
+      <ion-slide *ngFor="let product of cat.products ">
+        <div>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                {{ product.name}} - {{ product.price}}€
+              </ion-card-title>
+              <ion-card-content>
+                <img src={{product.img}}>
+                <ion-button color="roxo" expand="full" (click)="addToCart(product)">Adicionar</ion-button>
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+        </div>
       </ion-slide>
     </ion-slides>
+  </div>
 
-<!--
-   <ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    <ion-card-title>   {{ product.name }} - ${{ product.price }}</ion-card-title>
-  </ion-card-header>
 
-  <ion-card-content>
-
-  </ion-card-content>
-</ion-card>
-  </ion-content>
--->
-    <div *ngFor="let cat of items "  class="category-block">
-   
-   
-      <ion-row no-padding class="category-banner">
-        <ion-col text-left button tappable  align-self-center>
-          {{ cat.category }} 
-        
-        </ion-col>
-      </ion-row>
-   
-      <ion-slides [options]="sliderConfig" >
-        <ion-slide  *ngFor="let product of cat.products ">
-          <div>
-            <ion-card   >
-              <ion-card-header>
-                <ion-card-title>
-                  {{ product.name}} - ${{ product.price}}
-                </ion-card-title>
-                
-                <ion-card-content>
-                
-                  <img  src={{product.img}}   > 
-                
-                  <ion-button expand="full" (click)="addToCart(product)">Adicionar</ion-button>
-                </ion-card-content>
-              </ion-card-header>
-            </ion-card>
-          </div>
-        </ion-slide>
-      </ion-slides>
-
-      
-
-   
-    </div>
-  
+  <!-- CARD LADO A LADO-
+  <div color="primary" class="main-card">
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-content>
+            <ion-row class="ion-justify-content-center">
+              <img src="assets/slide/tablet.jpg">
+                </ion-row>
+            <ion-row class="ion-justify-content-center">
+              <ion-text>a very long text that takes a lot of vertical space</ion-text>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-card-content>
+            <ion-row class="ion-justify-content-center">
+              <ion-icon class="home-icons" name="add"></ion-icon>
+            </ion-row>
+            <ion-row class="ion-justify-content-center">
+              <ion-text>simple text</ion-text>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+    
+    </ion-row>
+  </div> -->

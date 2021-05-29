@@ -17,6 +17,7 @@ export class FavPage implements OnInit {
   isActives = false;
   isActive = false;
   rate = 0;
+  //icon de favorito
   botaoestado = [
     { state: false }
   ];
@@ -27,10 +28,16 @@ export class FavPage implements OnInit {
   @ViewChild('slider', { static: true }) private slider: IonSlides;
 
 
-  public slideOpts = {
+  public slideOpts =
+  //incializar o slide
+  {
     initialSlide: 1,
-    speed: 400
-  };
+    speed: 400,
+    //zoom na fotografia
+    zoom:{
+      maxRatio:2
+    }
+    };
 
 
   public async ionSlideDidChange(): Promise<void> {
@@ -58,12 +65,13 @@ export class FavPage implements OnInit {
     this.nav.navigateForward('entrada');
 
   }
+  //Botão favorito para mudar a cor
   btnActivate(ionicButton) {
 
     if (ionicButton.color === 'dark') { ionicButton.color = 'danger'; }
     else { ionicButton.color = 'dark'; }
   }
-
+//Avaliação
   onRate(rate) {
     console.log(rate);
     this.rate = rate;
