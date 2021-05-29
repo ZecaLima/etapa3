@@ -85,10 +85,10 @@
       <ion-card-content>
         <ion-slides #slider pager="true" [options]="slideOpts"  zoom (ionSlideDidChange)='ionSlideDidChange()'>
           <ion-slide>
-            <img src="assets/aspirador.jpg" style="width:100%;height:auto">
+            <img src="assets/aspi.jpg" style="width:100%;height:auto">
           </ion-slide>
           <ion-slide>
-            <img src="assets/slide/aspi1.png" style="width:100%;height:auto">
+            <img src="assets/aspi2.jpg" style="width:100%;height:auto">
           </ion-slide>
         </ion-slides>
         
@@ -122,6 +122,20 @@
       </ion-card-content>
     </ion-card-header>
   </ion-card>
-
+  <ion-fab class="custom-fab"  style="margin-top: -75%; margin-left:44% ;">
+    <ion-fab-button class="custom-fab"  color="light"> 
+      <ion-icon color="dark" name="share-social-sharp" style=" margin-left:25% ;"></ion-icon>
+    </ion-fab-button  >
+ 
+    <ion-fab-list side="bottom">
+      <ion-fab-button (click)="sharesuc()"><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button (click)="sharesuc()"><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="end">
+      <ion-fab-button (click)="sharesuc()"><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
 

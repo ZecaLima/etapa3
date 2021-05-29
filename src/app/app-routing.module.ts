@@ -32,7 +32,20 @@ const routes: Routes = [
   {
     path: 'partilhar',
     loadChildren: () => import('./inicio/partilhar/partilhar.module').then( m => m.PartilharPageModule)
-  }
+  },
+
+  {
+    path: 'aspirador',
+    loadChildren: () => import('./produtos/aspirador/aspirador.module').then( m => m.AspiradorPageModule)
+  },
+  {
+    path: 'portatil',
+    loadChildren: () => import('./produtos/portatil/portatil.module').then( m => m.PortatilPageModule)
+  },
+{
+  path: 'telemovel',
+  loadChildren: () => import('./produtos/telemovel/telemovel.module').then( m => m.TelemovelPageModule)
+}
 
 
 

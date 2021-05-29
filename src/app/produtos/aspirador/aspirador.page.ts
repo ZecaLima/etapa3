@@ -48,7 +48,30 @@ export class AspiradorPage implements OnInit {
 
 
 
-  constructor(public nav: NavController) { }
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  constructor(public nav: NavController, public alertCtrl: AlertController) { }
+  async sharesuc() {
+    const alert = await this.alertCtrl.create({
+
+      subHeader: 'Partilhado com sucesso!',
+      backdropDismiss: false,
+      buttons: [{
+        text: 'Continuar compras',
+        handler: () => {
+          this.nav.navigateForward('entrada');
+        }
+      },
+
+      {
+        text: 'Voltar',
+        handler: () => {
+
+        }
+      }
+      ]
+    });
+    await alert.present();
+  }
 
   ngOnInit() {
   }
