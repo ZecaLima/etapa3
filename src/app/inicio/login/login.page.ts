@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
+import { LoginPageForm } from './login.page.form';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +9,9 @@ import { AlertController, NavController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  form: FormGroup;
 
-  constructor(public nav: NavController, public alertCtrl: AlertController) { }
+  constructor(public nav: NavController, public alertCtrl: AlertController, private  formBuilder: FormBuilder) { }
   async loginsuc() {
     const alert = await this.alertCtrl.create({
 
@@ -37,6 +40,7 @@ export class LoginPage implements OnInit {
     await alert.present();
   }
   ngOnInit() {
+    this.form=new LoginPageForm(this.formBuilder).createForm(); //inicializa formulario
   }
   criarcontas() {
     this.nav.navigateForward('criarconta');
