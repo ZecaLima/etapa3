@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
+import { CriarcontaPageForm } from './criarconta.page.form';
 
 @Component({
   selector: 'app-criarconta',
@@ -8,8 +10,8 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./criarconta.page.scss'],
 })
 export class CriarcontaPage implements OnInit {
-
-  constructor(public nav: NavController, public alertCtrl: AlertController) { }
+  form: FormGroup;
+  constructor(public nav: NavController, public alertCtrl: AlertController,private  formBuilder: FormBuilder) { }
 
   async showMultipleAlertButtons() {
     const alert = await this.alertCtrl.create({
@@ -23,12 +25,7 @@ export class CriarcontaPage implements OnInit {
           this.nav.navigateForward('entrada');
         }
       },
-      {
-        text: 'Conta',
-        handler: () => {
 
-        }
-      },
       {
         text: 'Cancelar',
         handler: () => {
@@ -41,6 +38,7 @@ export class CriarcontaPage implements OnInit {
   }
 
   ngOnInit() {
+    this.form=new CriarcontaPageForm(this.formBuilder).createForm();
   }
 
   voltar() {

@@ -1,0 +1,146 @@
+<!--"CABEÇALHO"-->
+<ion-header style="background-color: rgb(61, 66, 150, 1);" [translucent]="true">
+  <!--- <img style="margin-right:120%; margin-top: 5%"   src="assets/icon/logo.png"  height='40' width='200'/>-->
+  <ion-text style="color:white;font-size: 40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">
+    INOVATECH </ion-text>
+  <ion-button style="color: white;block-size:30%; margin-top:-12%; margin-left: 65%; font-size: 12px; "
+    [routerLink]="['/criarconta']" fill="clear"> CRIAR CONTA </ion-button>
+  <ion-button style="color:white; block-size:30%; margin-top:-11%; margin-left: 70%; font-size: 12px; "
+    [routerLink]="['/login']" fill="clear"> LOGIN </ion-button>
+
+  <ion-toolbar color="rgb(87, 98, 255)">
+    <ion-buttons slot="start">
+      <ion-menu-button style="background-color: rgb(61, 66, 150, 1); margin-top: -30%;"></ion-menu-button>
+    </ion-buttons>
+
+    <!-- Barra de  pesquisa -->
+
+    <ion-searchbar style="margin-top: -5%; " (ionChange)="getItems($event)" placeholder='Pesquisar'
+      showCancelButton="focus"></ion-searchbar>
+    <ion-list *ngIf="isItemAvailable">
+      <!-- TEMOS QUE INSERIR OS ITEM E O NOMES DOS MESMO PARA DEPOIS APARECER A SUGESTAO-->
+      <ion-item *ngFor="let item of items">{{ item }}</ion-item>
+    </ion-list>
+    <ion-buttons>
+      <ion-button
+        style="background-color: rgb(61, 66, 150, 1);color:rgb(255, 255, 255);margin-left: 80% ; margin-top:-15%"
+        ion-button outline item-end ion-button (click)="carrinho()">
+        <ion-icon name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+  <ion-button color="roxo" style="background-color: rgba(161, 165, 241, 0.425);color:rgb(255, 255, 255)"
+    expand="full" (click)="voltar()">
+    <ion-icon style="margin-right:0%;" name="arrow-back-outline"></ion-icon>
+    VOLTAR AO INÍCIO
+  </ion-button>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card-style">
+    <ion-card-header>
+      <ion-card-title>
+          TABLET HSM 16
+      </ion-card-title>
+      <!--PONTUAÇÃO-->
+      <div *ngIf="rate==0">
+        <ion-icon color="warning" name="star-outline" (click)="onRate(1)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
+
+      </div>
+      <div *ngIf="rate==1">
+        <ion-icon color="warning"  name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
+      
+      </div>
+      <div *ngIf="rate==2">
+        <ion-icon color="warning"  name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon color="warning"  name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
+    
+      </div>    
+      <div *ngIf="rate==3">
+        <ion-icon color="warning"  name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon color="warning"  name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning"  name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
+        
+      </div>
+  
+      <div *ngIf="rate==4">
+        <ion-icon color="warning" name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon color="warning"  name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning"  name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning"  name="star" (click)="onRate(4)"></ion-icon>
+     
+      </div>
+
+      <ion-card-content>
+        <ion-slides #slider pager="true" [options]="slideOpts"  zoom (ionSlideDidChange)='ionSlideDidChange()'>
+          <ion-slide>
+            <img src="assets/tablet2.jpg" style="width:100%;height:auto">
+          </ion-slide>
+          <ion-slide>
+            <img src="assets/tablet3.png" style="width:100%;height:auto">
+          </ion-slide>
+          <ion-slide>
+            <img src="assets/tablet4.jpg" style="width:100%;height:auto">
+          </ion-slide>
+        </ion-slides>
+        
+        <!--ICONS + BOTÃO-->
+             <button style="background-color: white; margin-left: 10%;" *ngFor="let botaoestado of botaoestado"
+          (click)="botaoestado.state = !botaoestado.state">
+          <ion-icon name="heart" style="margin-left: 15%; " [class.isActive]="botaoestado.state">
+          </ion-icon>
+        </button>
+        <ion-icon color="dark" name="share-social-sharp" style="margin-top: 5%; margin-left:25% ;"></ion-icon>
+        <ion-icon color="dark" name="cart" style="margin-left: 30%;"></ion-icon>
+      
+        <ion-button id="1" #first ion-button color="dark" (click)="btnActivate(first)"         
+          style="color: black; outline-color: black; font-size: 65%; "fill="outline" >
+          FAVORITO</ion-button>
+        <ion-button color="dark" style="color: black;border-bottom-color: black; outline-color: black; font-size: 65%;margin-left: 5%; "
+          fill="outline">PARTILHAR</ion-button>
+        
+   
+        <ion-button color="dark" style="color: black; outline-color: black; font-size: 65%; margin-left: 6%;  "
+          fill="outline" >ADICIONAR</ion-button>
+
+
+          <ion-text style="margin-bottom: 10% ; color: black;">
+            <h2><p > <strong>SOBRE</strong></p> </h2> <h2>  Tablet HUAWEI MatePad <br>
+              10.4'' - 64 GB - 4 GB - Wi-Fi - Cinzento <br>
+              Vem com capa <br>
+              Android 10 AOSP e Huawei Mobile Services (HMS) <br>
+              Google Mobile Services (GMS) não está disponível.  </h2>
+            <p> Preço: 345,00€ ou em 3x sem juros</p>
+            </ion-text>
+       
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+  
+  <ion-fab class="custom-fab"  style="margin-top: -85%; margin-left:44% ;">
+    <ion-fab-button class="custom-fab"  color="light"> 
+      <ion-icon color="dark" name="share-social-sharp" style="margin-top: 5%; margin-left:25% ;"></ion-icon>
+    </ion-fab-button  >
+ 
+    <ion-fab-list side="bottom">
+      <ion-fab-button (click)="sharesuc()"><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button (click)="sharesuc()"><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="end">
+      <ion-fab-button (click)="sharesuc()"><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

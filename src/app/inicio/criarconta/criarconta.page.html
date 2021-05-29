@@ -31,28 +31,21 @@
   </ion-toolbar>
 
 
-  <ion-button color="roxo" color="rgb(255, 210, 168)" style="background-color: rgb(161, 165, 241, 0.425);color:rgb(255, 255, 255)"
-    expand="full" (click)="voltar()">
+  <ion-button color="roxo" color="rgb(255, 210, 168)"
+    style="background-color: rgb(161, 165, 241, 0.425);color:rgb(255, 255, 255)" expand="full" (click)="voltar()">
     <ion-icon style="margin-right:0%;" name="arrow-back-outline"></ion-icon>
     VOLTAR AO INÍCIO
   </ion-button>
 
-
-
-
 </ion-header>
 
 
-
-
-
-
 <ion-content>
-  
+
   <ion-grid class="grid1">
-   
+
     <ion-row class="row1">
-      
+
       <ion-col>
 
       </ion-col>
@@ -66,18 +59,22 @@
 
   </ion-grid>
   <div class="contaier-login">
-    <img  src="assets/user2.png" style="height: 30%; width: 30%; margin-left: 35%; "   >
+    <img src="assets/user2.png" style="height: 30%; width: 30%; margin-left: 35%; ">
     <ion-grid>
-      <form>
+      <form [formGroup]="form">
         <ion-item lines="full">
           <ion-label position="floating">Nome</ion-label>
-          <ion-input type="text" required></ion-input>
+          <ion-input type="nome" formControlName="nome" required></ion-input>
         </ion-item>
+        <ion-label color="danger" *ngIf="form.get('nome').touched && form.get('nome').errors?.required">Nome é
+          obrigatório</ion-label>
 
         <ion-item lines="full">
           <ion-label position="floating"> Apelido </ion-label>
-          <ion-input type="text" required></ion-input>
+          <ion-input type="apelido" formControlName="apelido" required></ion-input>
         </ion-item>
+        <ion-label color="danger" *ngIf="form.get('apelido').touched && form.get('apelido').errors?.required">Apelido é
+          obrigatório</ion-label>
 
         <ion-item lines="full">
           <ion-label position="floating">Data de Nascimento</ion-label>
@@ -87,22 +84,27 @@
 
         <ion-item lines="full">
           <ion-label position="floating">Email</ion-label>
-          <ion-input type="text" required></ion-input>
+          <ion-input type="email" formControlName="email" required></ion-input>
         </ion-item>
-
+        <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.required">Email é
+          obrigatório</ion-label>
+        <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.email">Email é invalido
+        </ion-label>
         <ion-item lines="full">
           <ion-label position="floating">Palavra-passe</ion-label>
-          <ion-input type="password" required></ion-input>
+          <ion-input type="password" formControlName="password" required></ion-input>
         </ion-item>
+        <ion-label color="danger" *ngIf="form.get('password').touched && form.get('password').errors?.required">
+          Palavra-passe é obrigatória</ion-label>
 
-  
- 
+
         <ion-row>
           <ion-col>
-            <ion-button (click)="showMultipleAlertButtons()"  type="submit" color="dark" expand="full" fill="outline">Registar</ion-button>
+            <ion-button (click)="showMultipleAlertButtons()" type="submit" color="dark" expand="full" fill="outline">
+              Registar</ion-button>
           </ion-col>
         </ion-row>
-   
+
       </form>
     </ion-grid>
   </div>
