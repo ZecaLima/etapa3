@@ -75,4 +75,9 @@ export class ContaPage implements OnInit {
     this.nav.navigateForward('fav');
 
   }
+
+pagar(){
+  this.nav.navigateForward('pagar');
+
+}
 }
