@@ -83,6 +83,10 @@ export class FavcontaPage implements OnInit {
     this.items = this.cartService.getProducts();
     this.cart = this.cartService.getCart();
   }
+  voltar() {
+    this.nav.navigateForward('entrada');
+
+  }
 
   criarcontas(){
     this.nav.navigateForward('criarconta');
