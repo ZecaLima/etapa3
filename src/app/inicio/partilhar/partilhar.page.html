@@ -34,113 +34,97 @@
   <ion-button color="roxo" style="background-color: rgba(161, 165, 241, 0.425);color:rgb(255, 255, 255)"
     expand="full" (click)="voltar()">
     <ion-icon style="margin-right:0%;" name="arrow-back-outline"></ion-icon>
-    VOLTAR AO INÍCIO
+    VOLTAR
   </ion-button>
 </ion-header>
 
+
 <ion-content>
-  <ion-card class="card-style">
-    <ion-card-header>
-      <ion-card-title>
-          TABLET HSM 16
-      </ion-card-title>
-      <!--PONTUAÇÃO-->
-      <div *ngIf="rate==0">
-        <ion-icon color="warning" name="star-outline" (click)="onRate(1)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(2)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(3)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
 
-      </div>
-      <div *ngIf="rate==1">
-        <ion-icon color="warning"  name="star" (click)="onRate(1)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(2)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(3)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
-      
-      </div>
-      <div *ngIf="rate==2">
-        <ion-icon color="warning"  name="star" (click)="onRate(1)"></ion-icon>
-        <ion-icon color="warning"  name="star" (click)="onRate(2)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(3)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
-    
-      </div>    
-      <div *ngIf="rate==3">
-        <ion-icon color="warning"  name="star" (click)="onRate(1)"></ion-icon>
-        <ion-icon color="warning"  name="star" (click)="onRate(2)"></ion-icon>
-        <ion-icon color="warning"  name="star" (click)="onRate(3)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
+  <ion-button (click)="check()" color="roxo" fill="outline" style="margin-left: 15%;"  >Filtro</ion-button>
+
+  <div color="roxo" >
+    <ion-row>
+      <ion-col>
+        <ion-card class="main-card"   [routerLink]="['/aspirador']" >
+          <ion-card-title style="text-align: center;"> Irobot</ion-card-title>
+          
+          <ion-card-content>
+            <ion-row class="ion-justify-content-center">
+              <img src="assets/aspi.jpg">
+                </ion-row>
+            <ion-row class="ion-justify-content-center">
+              <ion-text> Aspirador Irobot 
+                <br> <strong>Preço: </strong> 400,00€
+              </ion-text>
+            </ion-row>
+            <ion-button  expand ="full "size ="small"color="dark" fill="outline"   >Ver mais</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+
+<ion-col>
+      <ion-card class="main-card"   [routerLink]="['/aspirador']" >
+        <ion-card-title style="text-align: center;"> Aspirobo </ion-card-title>
         
-      </div>
-  
-      <div *ngIf="rate==4">
-        <ion-icon color="warning" name="star" (click)="onRate(1)"></ion-icon>
-        <ion-icon color="warning"  name="star" (click)="onRate(2)"></ion-icon>
-        <ion-icon color="warning"  name="star" (click)="onRate(3)"></ion-icon>
-        <ion-icon color="warning"  name="star" (click)="onRate(4)"></ion-icon>
-     
-      </div>
-
-      <ion-card-content>
-        <ion-slides #slider pager="true" [options]="slideOpts"  zoom (ionSlideDidChange)='ionSlideDidChange()'>
-          <ion-slide>
-            <img src="assets/tablet2.jpg" style="width:100%;height:auto">
-          </ion-slide>
-          <ion-slide>
-            <img src="assets/tablet3.png" style="width:100%;height:auto">
-          </ion-slide>
-          <ion-slide>
-            <img src="assets/tablet4.jpg" style="width:100%;height:auto">
-          </ion-slide>
-        </ion-slides>
-        
-        <!--ICONS + BOTÃO-->
-             <button style="background-color: white; margin-left: 10%;" *ngFor="let botaoestado of botaoestado"
-          (click)="botaoestado.state = !botaoestado.state">
-          <ion-icon name="heart" style="margin-left: 15%; " [class.isActive]="botaoestado.state">
-          </ion-icon>
-        </button>
-        <ion-icon color="dark" name="share-social-sharp" style="margin-top: 5%; margin-left:25% ;"></ion-icon>
-        <ion-icon color="dark" name="cart" style="margin-left: 30%;"></ion-icon>
-      
-        <ion-button id="1" #first ion-button color="dark" (click)="btnActivate(first)"         
-          style="color: black; outline-color: black; font-size: 65%; "fill="outline" >
-          FAVORITO</ion-button>
-        <ion-button color="dark" style="color: black;border-bottom-color: black; outline-color: black; font-size: 65%;margin-left: 5%; "
-          fill="outline">PARTILHAR</ion-button>
-        
-   
-        <ion-button color="dark" style="color: black; outline-color: black; font-size: 65%; margin-left: 6%;  "
-          fill="outline" >ADICIONAR</ion-button>
-
-
-          <ion-text style="margin-bottom: 10% ; color: black;">
-            <h2><p > <strong>SOBRE</strong></p> </h2> <h2>  Tablet HUAWEI MatePad <br>
-              10.4'' - 64 GB - 4 GB - Wi-Fi - Cinzento <br>
-              Vem com capa <br>
-              Android 10 AOSP e Huawei Mobile Services (HMS) <br>
-              Google Mobile Services (GMS) não está disponível.  </h2>
-            <p> Preço: 345,00€ ou em 3x sem juros</p>
+        <ion-card-content>
+          <ion-row class="ion-justify-content-center">
+            <img src="assets/slide/aspi.jpg">
+              </ion-row>
+          <ion-row class="ion-justify-content-center">
+            <ion-text> Aspirador Irobot 
+              <br> <strong>Preço: </strong> 500,00€
             </ion-text>
-       
-      </ion-card-content>
-    </ion-card-header>
-  </ion-card>
+          </ion-row>
+          <ion-button  expand ="full "size ="small"color="dark" fill="outline"   >Ver mais</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
   
-  <ion-fab class="custom-fab"  style="margin-top: -85%; margin-left:44% ;">
-    <ion-fab-button class="custom-fab"  color="light"> 
-      <ion-icon color="dark" name="share-social-sharp" style="margin-top: 5%; margin-left:25% ;"></ion-icon>
-    </ion-fab-button  >
- 
-    <ion-fab-list side="bottom">
-      <ion-fab-button (click)="sharesuc()"><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="start">
-      <ion-fab-button (click)="sharesuc()"><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="end">
-      <ion-fab-button (click)="sharesuc()"><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
-</ion-content>
+  
+<ion-col>
+  <ion-card class="main-card"   [routerLink]="['/aspirador']" >
+    <ion-card-title style="text-align: center;"> Aspi </ion-card-title>
+    
+    <ion-card-content>
+      <ion-row class="ion-justify-content-center">
+        <img src="assets/aspirador.jpg">
+          </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-text> Aspirador Irobot 
+          <br> <strong>Preço: </strong> 600,00€
+        </ion-text>
+      </ion-row>
+      <ion-button  expand ="full "size ="small"color="dark" fill="outline"   >Ver mais</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-col>
+
+
+<ion-col>
+  <ion-card class="main-card"   [routerLink]="['/aspirador']" >
+    <ion-card-title style="text-align: center;"> Arobo </ion-card-title>
+    
+    <ion-card-content>
+      <ion-row class="ion-justify-content-center">
+        <img src="assets/aspi2.jpg">
+          </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-text> Aspirador Irobot 
+          <br> <strong>Preço: </strong> 700,00€
+        </ion-text>
+      </ion-row>
+      <ion-button  expand ="full "size ="small"color="dark" fill="outline"   >Ver mais</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-col>
+
+  
+  
+    </ion-row>
+    <ion-row>
+    
+    </ion-row>
+  </div>
+</ion-content> 

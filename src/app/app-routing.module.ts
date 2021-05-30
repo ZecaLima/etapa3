@@ -45,7 +45,11 @@ const routes: Routes = [
 {
   path: 'telemovel',
   loadChildren: () => import('./produtos/telemovel/telemovel.module').then( m => m.TelemovelPageModule)
-}
+},  {
+    path: 'check',
+    loadChildren: () => import('./inicio/check/check.module').then( m => m.CheckPageModule)
+  }
+
 
 
 

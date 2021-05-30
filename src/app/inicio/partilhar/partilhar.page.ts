@@ -85,6 +85,14 @@ export class PartilharPage implements OnInit {
     this.nav.navigateForward('entrada');
 
   }
+  aspirador(){
+    this.nav.navigateForward('aspirador');
+    }
+
+    check(){
+      this.nav.navigateForward('check');
+      }
+
   //Botão favorito para mudar a cor
   btnActivate(ionicButton) {
 
@@ -97,6 +105,4 @@ export class PartilharPage implements OnInit {
     this.rate = rate;
   }
 
-
 }
-

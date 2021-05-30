@@ -91,7 +91,7 @@ export class AspiradorPage implements OnInit {
 
 
   voltar() {
-    this.nav.navigateForward('entrada');
+    this.nav.navigateForward('partilhar');
 
   }
   //Botão favorito para mudar a cor

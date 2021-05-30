@@ -1,4 +1,42 @@
-    
+ion-menu-button {
+  background-color: rgb(87, 98, 255);
+  color:white;
+}
+
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+  background-color: rgb(87, 98, 255);
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+
+}
+
+#container a {
+  text-decoration: none;
+  background-color: rgb(87, 98, 255);
+}
+
+ion-searchbar {
+color : #141313;
+border-radius: 15px;
+height: 60px ;
+max-width: 250px;
+font-size: 1.25em;
+border: 1px solid transparent;
+
+  }
+
+
+
+
+
 .grid1 {
     height: 100%;
     padding: 0px;
@@ -20,7 +58,7 @@
 
 .contaier-login {
     width: 90%;
-    margin-top: -120%;
+    margin-top: -150%;
     margin-left: 5%;
     padding: 10px;
     background: #FFFFFF;
