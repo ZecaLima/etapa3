@@ -48,6 +48,14 @@ const routes: Routes = [
 },  {
     path: 'check',
     loadChildren: () => import('./inicio/check/check.module').then( m => m.CheckPageModule)
+  },
+  {
+    path: 'conta',
+    loadChildren: () => import('./conta/conta.module').then( m => m.ContaPageModule)
+  },
+  {
+    path: 'favconta',
+    loadChildren: () => import('./favconta/favconta.module').then( m => m.FavcontaPageModule)
   }
 
 

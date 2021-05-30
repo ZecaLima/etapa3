@@ -11,7 +11,7 @@ export class AppComponent {
     { title: 'Computadores', url: 'computarores', icon: "desktop" },
     { title: 'Telemóveis e Tablets', url: 'telemoveis', icon: "tablet-portrait" },
     { title: 'Conta', url: 'conta', icon: 'person'},
-    { title: 'Ajuda', url: 'conta', icon: 'help'},
+    { title: 'Ajuda', url: 'ajuda', icon: 'help'},
   ];
 
   constructor() {}

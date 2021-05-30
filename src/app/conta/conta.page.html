@@ -1,0 +1,58 @@
+<ion-header style="background-color: #3d4296;" [translucent]="true">
+  <ion-text style="color:white;font-size: 40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">
+    INOVATECH </ion-text>
+  <ion-button style="color: white;block-size:30%; margin-top:-12%; margin-left: 65%; font-size: 12px; "
+    [routerLink]="['/criarconta']" fill="clear"> CRIAR CONTA </ion-button>
+  <ion-button style="color:white; block-size:30%; margin-top:-11%; margin-left: 70%; font-size: 12px; "
+    [routerLink]="['/login']" fill="clear"> LOGIN </ion-button>
+
+  <ion-toolbar color="rgb(87, 98, 255)">
+    <ion-buttons slot="start">
+      <ion-menu-button style="background-color: rgb(61, 66, 150, 1); margin-top: -30%;"></ion-menu-button>
+    </ion-buttons>
+
+    <!-- Barra de  pesquisa -->
+
+    <ion-searchbar style="margin-top: -5%; " (ionChange)="getItems($event)" placeholder='Pesquisar'
+      showCancelButton="focus"></ion-searchbar>
+    <ion-list *ngIf="isItemAvailable">
+      <!-- TEMOS QUE INSERIR OS ITEM E O NOMES DOS MESMO PARA DEPOIS APARECER A SUGESTAO-->
+      <ion-item *ngFor="let item of items">{{ item }}</ion-item>
+    </ion-list>
+    <ion-buttons>
+      <ion-button
+        style="background-color: rgb(61, 66, 150, 1);color:rgb(255, 255, 255);margin-left: 80% ; margin-top:-15%"
+        (click)="openCart()">
+        <ion-badge color="roxo" *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+        <ion-icon size="large" slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="text-align:center">
+    <h1>Informações da conta</h1>
+  </div>
+
+  <div>
+  <p><b>Nome: </b>Jerônimo Almeida </p>
+  <p><b>Email: </b>jalmeida1976@gmail.com</p>
+  <p><b>Data de nascimento: </b>25/02/1976</p>
+  <p><b>Telefone: </b>913625354</p><br>
+  
+  <p><b>Endereço</b></p>
+  <p><b>Rua: </b>Rua dos caquinhos</p>
+  <p><b>Cidade: </b>Vila Nova de Gaia</p>
+  <p><b>Distrito: </b>Porto</p>
+  <p><b>Código Postal: </b>4800-243</p>
+  </div>
+
+  <ion-button routerLink="/favconta" routerDirection="forward" expand="block" fill="solid" shape="round" color="danger" size="small">
+    Visualizar Favoritos
+  </ion-button>
+
+
+
+
+</ion-content>
