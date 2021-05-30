@@ -29,14 +29,15 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-
-
-  <ion-button color="roxo" style="background-color: rgba(161, 165, 241, 0.425);color:rgb(255, 255, 255)"
-    expand="full" (click)="voltar()">
-    <ion-icon style="margin-right:0%;" name="arrow-back-outline"></ion-icon>
-    VOLTAR 
-  </ion-button>
-</ion-header>
+    
+  
+  
+  
+  <ion-buttons color="roxo" style="background-color: rgba(161, 165, 241, 0.425);color:rgb(255, 255, 255)"
+  expand="full">
+    <ion-back-button defaultHref="home"></ion-back-button>
+  </ion-buttons>
+</ion-header> 
 
 <ion-content>
   <ion-card class="card-style">
@@ -137,5 +138,6 @@
       <ion-fab-button (click)="sharesuc()"><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
     </ion-fab-list>
   </ion-fab>
+
 </ion-content>
 

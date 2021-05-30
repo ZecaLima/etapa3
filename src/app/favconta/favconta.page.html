@@ -1,9 +1,142 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>favconta</ion-title>
+<ion-header style="background-color: #3d4296;" [translucent]="true">
+  <ion-text style="color:white;font-size: 40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">
+    INOVATECH </ion-text>
+  <ion-button style="color: white;block-size:30%; margin-top:-12%; margin-left: 65%; font-size: 12px; "
+    [routerLink]="['/criarconta']" fill="clear"> CRIAR CONTA </ion-button>
+  <ion-button style="color:white; block-size:30%; margin-top:-11%; margin-left: 70%; font-size: 12px; "
+    [routerLink]="['/login']" fill="clear"> LOGIN </ion-button>
+
+  <ion-toolbar color="rgb(87, 98, 255)">
+    <ion-buttons slot="start">
+      <ion-menu-button style="background-color: rgb(61, 66, 150, 1); margin-top: -30%;"></ion-menu-button>
+    </ion-buttons>
+
+    <!-- Barra de  pesquisa -->
+
+    <ion-searchbar style="margin-top: -5%; " (ionChange)="getItems($event)" placeholder='Pesquisar'
+      showCancelButton="focus"></ion-searchbar>
+    <ion-list *ngIf="isItemAvailable">
+      <!-- TEMOS QUE INSERIR OS ITEM E O NOMES DOS MESMO PARA DEPOIS APARECER A SUGESTAO-->
+      <ion-item *ngFor="let item of items">{{ item }}</ion-item>
+    </ion-list>
+    <ion-buttons>
+      <ion-button
+        style="background-color: rgb(61, 66, 150, 1);color:rgb(255, 255, 255);margin-left: 80% ; margin-top:-15%"
+        (click)="openCart()">
+        <ion-badge color="roxo" *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+        <ion-icon size="large" slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div style="text-align:center">
+    <h1>Favoritos</h1>
+  </div>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6">
+        <ion-fab style="margin-left:30% ;">
+          <ion-fab-button color="secundary" >Partilhar</ion-fab-button>
+
+          <ion-fab-list side="end">
+            <ion-fab-button (click)="sharesuc()">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </ion-fab-button>
+          </ion-fab-list>
+        
+          <ion-fab-list side="bottom">
+            <ion-fab-button (click)="sharesuc()">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </ion-fab-button>
+          </ion-fab-list>
+        
+          <ion-fab-list side="start">
+            <ion-fab-button (click)="sharesuc()">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </ion-fab-button>
+          </ion-fab-list>
+    </ion-fab>
+      </ion-col>
+
+
+      <ion-col size="6">
+        <ion-fab style="margin-left:30% ;">
+          <ion-fab-button color="secundary" (click)="sharesuc()">Excluir</ion-fab-button>
+        </ion-fab>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <br>
+  <br>
+  <br>
+
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+
+        <ion-card class="main-card" >
+        <ion-card-title style="text-align: center;"> Aspirobo </ion-card-title>
+        <ion-card-content>
+
+          <div [routerLink]="['/aspirador']">
+            <img src="assets/slide/aspi.jpg">
+          
+
+        <div class="ion-justify-content-center">
+          <ion-text> Aspirador Irobot 
+            <br> <strong>Preço: </strong> 500,00€
+          </ion-text>
+        </div>
+        
+      </div>
+
+      <ion-checkbox></ion-checkbox>Selecionar
+        
+        </ion-card-content>
+      </ion-card>
+
+      </ion-col>
+
+
+
+
+
+
+
+      <ion-col>
+
+        <ion-card class="main-card" >
+          <ion-card-title style="text-align: center;"> Irobot </ion-card-title>
+          <ion-card-content>
+          
+          <div [routerLink]="['/aspirador']">
+             <img src="assets/aspi.jpg">
+            
+  
+          <div class="ion-justify-content-center">
+            <ion-text> Aspirador Irobot 
+              <br> <strong>Preço: </strong> 400,00€
+            </ion-text>
+          </div>
+          
+        </div>
+
+          <ion-checkbox></ion-checkbox>Selecionar
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button routerLink="/conta" routerDirection="forward" expand="block" fill="outline" shape="round" color="dark" size="small">
+    Visualizar Conta
+  </ion-button>
+
 
 </ion-content>
