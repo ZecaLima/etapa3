@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button routerLink="/conta" routerDirection="forward" fill="clear" color="roxo">
+      <ion-icon name="arrow-back-outline"> </ion-icon> Voltar
+      <ion-title color="dark" style="text-align: center;">Pagamento</ion-title>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <p><b>Nome: </b>Jerônimo Almeida </p>
+  <p><b>Email: </b>jalmeida1976@gmail.com</p>
+  <p><b>Endereço</b></p>
+  <p><b>Rua: </b>Rua dos caquinhos</p>
+  <p><b>Cidade: </b>Vila Nova de Gaia</p>
+  <p><b>Distrito: </b>Porto</p>
+  <p><b>Código Postal: </b>4800-243</p>
+
+  <ion-text class="centerText">Carrinho:</ion-text>
+  <ion-list>
+    <ion-item *ngFor="let item of selectedItems" lines="inset">
+    {{ item.count }}x {{ item.name }} - {{ item.price | currency:'EUR':'symbol' }}
+    <ion-label slot="end" text-right>{{ (item.price * item.count) | currency:'EUR':'symbol' }}</ion-label>
+  </ion-item>
+  <ion-item>
+    Total: <span slot="end">{{ total | currency:'EUR':'symbol' }}</span>
+  </ion-item>
+</ion-list>
+
+
+<ion-item color="roxo">
+  <ion-label>Metódo de Pagamento</ion-label>
+  <ion-select ok-text="Ok" cancel-text="Cancelar">
+    <ion-select-option value="m">PayPal</ion-select-option>
+    <ion-select-option value="p">MBWay</ion-select-option>
+    <ion-select-option value="c"> À cobrança</ion-select-option>
+  </ion-select>
+</ion-item>
+
+<ion-button (click)="pagando()"   type="submit" color="roxo" expand="full" fill="outline">Confirmar Pagamento</ion-button>
+
+
+</ion-content>

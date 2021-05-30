@@ -51,6 +51,11 @@ export class ContaPage implements OnInit {
     this.cart = this.cartService.getCart();
   }
 
+  voltar() {
+    this.nav.navigateForward('entrada');
+
+  }
+
   criarcontas(){
     this.nav.navigateForward('criarconta');
 
@@ -70,4 +75,9 @@ export class ContaPage implements OnInit {
     this.nav.navigateForward('fav');
 
   }
+
+pagar(){
+  this.nav.navigateForward('pagar');
+
+}
 }

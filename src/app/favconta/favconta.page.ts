@@ -62,6 +62,23 @@ export class FavcontaPage implements OnInit {
   }
 
 
+  async delsuc() {
+    const alert = await this.alertCtrl.create({
+
+      subHeader: 'Apagado com sucesso!',
+      backdropDismiss: false,
+      buttons: [{
+        text: 'Voltar',
+        handler: () => {
+
+        }
+      }
+      ]
+    });
+    await alert.present();
+  }
+
+
   ngOnInit() {
     this.items = this.cartService.getProducts();
     this.cart = this.cartService.getCart();

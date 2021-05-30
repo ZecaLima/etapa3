@@ -28,6 +28,12 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
+  
+  <ion-button color="roxo" style="background-color: rgba(161, 165, 241, 0.425);color:rgb(255, 255, 255)"
+    expand="full" (click)="voltar()">
+    <ion-icon style="margin-right:0%;" name="arrow-back-outline"></ion-icon>
+    VOLTAR AO INÍCIO
+  </ion-button>
 </ion-header>
 
 <ion-content>
@@ -50,6 +56,10 @@
 
   <ion-button routerLink="/favconta" routerDirection="forward" expand="block" fill="outline" shape="round" color="dark" size="small">
     Visualizar Favoritos
+  </ion-button>
+
+  <ion-button routerLink="/pagar" routerDirection="forward" expand="full" fill="outline"  color="roxo" size="small">
+    Efetuar Pagamento
   </ion-button>
 
 

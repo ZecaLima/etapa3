@@ -56,6 +56,10 @@ const routes: Routes = [
   {
     path: 'favconta',
     loadChildren: () => import('./favconta/favconta.module').then( m => m.FavcontaPageModule)
+  },
+  {
+    path: 'pagar',
+    loadChildren: () => import('./pagar/pagar.module').then( m => m.PagarPageModule)
   }
 
 
