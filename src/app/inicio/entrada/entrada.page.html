@@ -79,9 +79,13 @@
 
 
   <div *ngFor="let cat of items " class="category-block">
-    <ion-row no-padding class="category-banner">
+    <ion-row no-padding>
       <ion-col text-left button tappable align-self-center>
-        {{ cat.category }}
+      <div style="text-align:center">
+        <ion-text>
+         <h2>{{ cat.category }}</h2> 
+        </ion-text>
+      </div>
       </ion-col>
     </ion-row>
     <ion-slides [options]="sliderConfig">

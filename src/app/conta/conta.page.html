@@ -54,12 +54,16 @@
   <p><b>Código Postal: </b>4800-243</p>
   </div>
 
-  <ion-button routerLink="/favconta" routerDirection="forward" expand="full" fill="outline" color="roxo" size="small">
+  <ion-button routerLink="/favconta" routerDirection="forward" expand="full" fill="outline" shape="round" color="roxo" size="small">
     Visualizar Favoritos
   </ion-button>
 
   <ion-button routerLink="/pagar" routerDirection="forward" expand="full" fill="outline" shape="round" color="roxo" size="small">
     Efetuar Pagamento
+  </ion-button>
+
+  <ion-button (click)="logout()" routerDirection="forward" expand="full" fill="outline" shape="round" color="danger" size="small">
+    Sair da Conta
   </ion-button>
 
 

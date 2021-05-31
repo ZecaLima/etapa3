@@ -44,7 +44,29 @@ export class ContaPage implements OnInit {
     const index = await this.slider.getActiveIndex();
   }
 
-  constructor( public nav: NavController,private cartService: CartService, private router: Router ) { }
+  constructor( public nav: NavController,private cartService: CartService, private router: Router, public alertCtrl: AlertController ) { }
+
+  async logout() {
+    const alert = await this.alertCtrl.create({
+
+      subHeader: 'Logout efetuado com sucesso!',
+      backdropDismiss: false,
+      buttons: [{
+        text: 'Confirmar',
+        handler: () => {
+          this.nav.navigateForward('entrada');
+        }
+      },
+      {
+        text: 'Cancelar',
+        handler: () => {
+
+        }
+      }
+      ]
+    });
+    await alert.present();
+  }
 
   ngOnInit() {
     this.items = this.cartService.getProducts();
