@@ -13,7 +13,7 @@ export class CriarcontaPage implements OnInit {
   form: FormGroup;
   constructor(public nav: NavController, public alertCtrl: AlertController,private  formBuilder: FormBuilder) { }
 
-  async showMultipleAlertButtons() {
+  async Registosuc() {
     const alert = await this.alertCtrl.create({
 
       subHeader: 'Conta criada com sucesso!',
@@ -46,6 +46,11 @@ export class CriarcontaPage implements OnInit {
 
   }
   login() {
+    this.nav.navigateForward('login');
+
+  }
+
+  iniciarsessao() {
     this.nav.navigateForward('login');
 
   }
