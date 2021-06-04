@@ -3,11 +3,9 @@
   <!--- <img style="margin-right:120%; margin-top: 5%"   src="assets/icon/logo.png"  height='40' width='200'/>-->
   <ion-text style="color:white;font-size: 40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">
     INOVATECH </ion-text>
-  <ion-button style="color: white;block-size:30%; margin-top:-12%; margin-left: 65%; font-size: 12px; "
-    [routerLink]="['/criarconta']" fill="clear"> CRIAR CONTA </ion-button>
-  <ion-button style="color:white; block-size:30%; margin-top:-11%; margin-left: 70%; font-size: 12px; "
-    [routerLink]="['/login']" fill="clear"> LOGIN </ion-button>
-
+    <ion-button style="color: white;block-size:30%; margin-top:-12%; margin-left: 64%; font-size: 11px; "
+    [routerLink]="['/login']" fill="clear">  INICIAR SESSÃO <br>  OU CRIAR CONTA </ion-button>
+    
   <ion-toolbar color="rgb(87, 98, 255)">
     <ion-buttons slot="start">
       <ion-menu-button style="background-color: rgb(61, 66, 150, 1); margin-top: -30%;"></ion-menu-button>
@@ -59,7 +57,8 @@
 
   </ion-grid>
   <div class="contaier-login">
-    <img src="assets/user2.png" style="height: 30%; width: 30%; margin-left: 35%; ">
+    <ion-text style="font-weight: bold; margin-left: 30%; size: 14px;">  CRIAR CONTA </ion-text>
+    <img src="assets/user2.png" style="height: 30%; width: 30%; margin-left: 35%; margin-top: 10%; ">
     <ion-grid>
       <form [formGroup]="form">
         <ion-item lines="full">
