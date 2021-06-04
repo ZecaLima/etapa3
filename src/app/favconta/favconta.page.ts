@@ -1,3 +1,4 @@
+import { EventHandlerVars } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Component, OnInit } from '@angular/core';
 import {  ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
@@ -62,13 +63,37 @@ export class FavcontaPage implements OnInit {
   }
 
 
-  async delsuc() {
+  async delfav() {
     const alert = await this.alertCtrl.create({
 
-      subHeader: 'Apagado com sucesso!',
+      subHeader: 'De certeza que pretende excluir?',
       backdropDismiss: false,
       buttons: [{
-        text: 'Voltar',
+        text: 'não',
+        handler : () =>{
+          this.delcancel();
+        }
+      },
+        {
+          text: 'sim',
+          handler: () => {
+          this.delsuc();
+        }
+      }
+      ]
+    });
+
+    await alert.present();
+  }
+
+
+  async delcancel() {
+    const alert = await this.alertCtrl.create({
+
+      subHeader: 'Exclusão cancelada com sucesso!',
+      backdropDismiss: false,
+      buttons: [{
+        text: 'Confirmar',
         handler: () => {
 
         }
@@ -77,6 +102,23 @@ export class FavcontaPage implements OnInit {
     });
     await alert.present();
   }
+
+  async delsuc() {
+    const alert = await this.alertCtrl.create({
+
+      subHeader: 'Excluido com sucesso!',
+      backdropDismiss: false,
+      buttons: [{
+        text: 'Confirmar',
+        handler: () => {
+
+        }
+      }
+      ]
+    });
+    await alert.present();
+  }
+
 
 
   ngOnInit() {
