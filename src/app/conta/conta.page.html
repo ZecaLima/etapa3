@@ -39,17 +39,17 @@
     <h1>Informações da conta</h1>
   </div>
 
-  <div>
-  <p><b>Nome: </b>Jerônimo Almeida </p>
-  <p><b>Email: </b>jalmeida1976@gmail.com</p>
-  <p><b>Data de nascimento: </b>25/02/1976</p>
-  <p><b>Telefone: </b>913625354</p><br>
+  <div *ngFor="let utilizador of utilizadores | keyvalue">
+  <p><b>Nome: </b> {{utilizador.value.nome}} </p>
+  <p><b>Email: </b> {{utilizador.value.email}} </p>
+  <p><b>Data de nascimento: </b> {{utilizador.value.datanascimento}} </p>
+  <p><b>Telefone: </b> {{utilizador.value.elefone}} </p><br>
   
   <p><b>Endereço</b></p>
-  <p><b>Rua: </b>Rua dos caquinhos</p>
-  <p><b>Cidade: </b>Vila Nova de Gaia</p>
-  <p><b>Distrito: </b>Porto</p>
-  <p><b>Código Postal: </b>4800-243</p>
+  <p><b>Rua: </b> {{utilizador.value.rua}} </p>
+  <p><b>Cidade: </b> {{utilizador.value.cidade}} </p>
+  <p><b>Distrito: </b> {{utilizador.value.distrito}} </p>
+  <p><b>Código Postal: </b> {{utilizador.value.codPostal}} </p>
   </div>
 
   <ion-button routerLink="/favconta" routerDirection="forward" expand="full" fill="outline" shape="round" color="roxo" size="small">

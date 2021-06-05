@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { IonSlides } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
@@ -13,6 +13,8 @@ import { CartService } from 'src/app/cart.service';
   styleUrls: ['./conta.page.scss'],
 })
 export class ContaPage implements OnInit {
+
+  public utilizadores: any;
 
   cart = [];
   items = [];
@@ -52,15 +54,15 @@ export class ContaPage implements OnInit {
       subHeader: 'Logout efetuado com sucesso!',
       backdropDismiss: false,
       buttons: [{
-        text: 'Confirmar',
+        text: 'Cancelar',
         handler: () => {
-          this.nav.navigateForward('entrada');
+          
         }
       },
       {
-        text: 'Cancelar',
+        text: 'Confirmar',
         handler: () => {
-
+          this.nav.navigateForward('entrada');
         }
       }
       ]
@@ -71,6 +73,10 @@ export class ContaPage implements OnInit {
   ngOnInit() {
     this.items = this.cartService.getProducts();
     this.cart = this.cartService.getCart();
+
+    fetch('./assets/data/utilizadores.json')
+      .then(resposta => resposta.json())
+      .then(json => this.utilizadores = json);
   }
 
   voltar() {
@@ -101,5 +107,15 @@ export class ContaPage implements OnInit {
 pagar(){
   this.nav.navigateForward('pagar');
 
+}
+
+verDetalheUtilizador() {
+  let extras: NavigationExtras;
+  extras = {
+    state: {
+      utilizador: this.utilizadores[1]
+    }
+  }
+  this.router.navigate(['utilizador'], extras)
 }
 }
