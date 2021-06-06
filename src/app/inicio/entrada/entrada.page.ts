@@ -7,6 +7,8 @@ import { IonSlides } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { CartService } from 'src/app/cart.service';
 
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+
 
 
 
@@ -46,7 +48,9 @@ export class EntradaPage implements OnInit {
     const index = await this.slider.getActiveIndex();
    }
   // eslint-disable-next-line @typescript-eslint/member-ordering
-  constructor(public nav: NavController,private cartService: CartService, private router: Router) { }
+  constructor(public nav: NavController,private cartService: CartService, private router: Router, private orientacao: ScreenOrientation) { 
+    this.orientacao.lock(this.orientacao.ORIENTATIONS.PORTRAIT);
+  }
 
   ngOnInit() {
     this.items = this.cartService.getProducts();
