@@ -12,7 +12,7 @@ import { NavController } from '@ionic/angular';
 })
 export class FavPage implements OnInit {
   toggled: boolean;
-  isClick = false;
+  isClick = false; //continua a cor preta
   buttonColor: string;
   isActives = false;
   isActive = false;
@@ -69,6 +69,7 @@ export class FavPage implements OnInit {
   btnActivate(ionicButton) {
 
     if (ionicButton.color === 'dark') { ionicButton.color = 'danger'; }
+    //se o botão estiver preto e o usuario clicar passa  ter a cor vermelha
     else { ionicButton.color = 'dark'; }
   }
 //Avaliação

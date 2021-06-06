@@ -18,20 +18,21 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
   styleUrls: ['./entrada.page.scss'],
 })
 export class EntradaPage implements OnInit {
-  cart = [];
+  cart = []; //array do cart
   items = [];
   toggled: boolean;
   buttonColor: string;
   isActives = false;
   isActive = false;
   rate = 0;
+  //permite saber o estado do botao
   botaoestado = [
     { state: false }
   ];
   botaofavorito = [
     { state: false }
   ];
-
+//slides
   sliderConfig = {
     slidesPerView: 1,
     spaceBetween: 10,

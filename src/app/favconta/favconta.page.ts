@@ -62,11 +62,11 @@ export class FavcontaPage implements OnInit {
     await alert.present();
   }
 
-
+//
   async delfav() {
     const alert = await this.alertCtrl.create({
 
-      subHeader: 'De certeza que pretende excluir?',
+      subHeader: 'Certeza que pretende excluir?',
       backdropDismiss: false,
       buttons: [{
         text: 'não',

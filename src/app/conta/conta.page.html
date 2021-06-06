@@ -1,8 +1,8 @@
 <ion-header style="background-color: #3d4296;" [translucent]="true">
   <ion-text style="color:white;font-size: 40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">
     INOVATECH </ion-text>
-    <ion-button style="color: white;block-size:30%; margin-top:-12%; margin-left: 64%; font-size: 11px; "
-    [routerLink]="['/login']" fill="clear">  INICIAR SESSÃO <br>  OU CRIAR CONTA </ion-button>
+  <ion-button style="color: white;block-size:30%; margin-top:-12%; margin-left: 64%; font-size: 11px; "
+    [routerLink]="['/login']" fill="clear"> INICIAR SESSÃO <br> OU CRIAR CONTA </ion-button>
 
   <ion-toolbar color="rgb(87, 98, 255)">
     <ion-buttons slot="start">
@@ -26,14 +26,16 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-  
-  <ion-button color="roxo" style="background-color: rgba(161, 165, 241, 0.425);color:rgb(255, 255, 255)"
-    expand="full" (click)="voltar()">
+  <!--VOLTAR AO INICIO -->
+  <ion-button color="roxo" style="background-color: rgba(161, 165, 241, 0.425);color:rgb(255, 255, 255)" expand="full"
+    (click)="voltar()">
     <ion-icon style="margin-right:0%;" name="arrow-back-outline"></ion-icon>
     VOLTAR AO INÍCIO
   </ion-button>
 </ion-header>
 
+
+<!--Conteudo da conta com json -->
 <ion-content>
   <div style="text-align:center">
     <h1>Informações da conta</h1>
@@ -52,15 +54,18 @@
   <p><b>Código Postal: </b> {{utilizador.value.codPostal}} </p>
   </div>
 
-  <ion-button routerLink="/favconta" routerDirection="forward" expand="full" fill="outline" shape="round" color="roxo" size="small">
+  <ion-button routerLink="/favconta" routerDirection="forward" expand="full" fill="outline" shape="round" color="roxo"
+    size="small">
     Visualizar Favoritos
   </ion-button>
 
-  <ion-button routerLink="/pagar" routerDirection="forward" expand="full" fill="outline" shape="round" color="roxo" size="small">
+  <ion-button routerLink="/pagar" routerDirection="forward" expand="full" fill="outline" shape="round" color="roxo"
+    size="small">
     Efetuar Pagamento
   </ion-button>
 
-  <ion-button (click)="logout()" routerDirection="forward" expand="full" fill="outline" shape="round" color="danger" size="small">
+  <ion-button (click)="logout()" routerDirection="forward" expand="full" fill="outline" shape="round" color="danger"
+    size="small">
     Sair da Conta
   </ion-button>
 
