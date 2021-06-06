@@ -3,8 +3,8 @@
   <!--- <img style="margin-right:120%; margin-top: 5%"   src="assets/icon/logo.png"  height='40' width='200'/>-->
   <ion-text style="color:white;font-size: 40px; font-family: 'Courier New', Courier, monospace;margin-left:2% ">
     INOVATECH </ion-text>
-    <ion-button style="color: white;block-size:30%; margin-top:-12%; margin-left: 64%; font-size: 11px; "
-    [routerLink]="['/login']" fill="clear">  INICIAR SESSÃO <br>  OU CRIAR CONTA </ion-button>
+  <ion-button style="color: white;block-size:30%; margin-top:-12%; margin-left: 64%; font-size: 11px; "
+    [routerLink]="['/login']" fill="clear"> INICIAR SESSÃO <br> OU CRIAR CONTA </ion-button>
 
   <ion-toolbar color="rgb(87, 98, 255)">
     <ion-buttons slot="start">
@@ -29,8 +29,8 @@
   </ion-toolbar>
 
 
-  <ion-button color="roxo" style="background-color: rgba(161, 165, 241, 0.425);color:rgb(255, 255, 255)"
-    expand="full" (click)="voltar()">
+  <ion-button color="roxo" style="background-color: rgba(161, 165, 241, 0.425);color:rgb(255, 255, 255)" expand="full"
+    (click)="voltar()">
     <ion-icon style="margin-right:0%;" name="arrow-back-outline"></ion-icon>
     VOLTAR AO INÍCIO
   </ion-button>
@@ -40,48 +40,48 @@
   <ion-card class="card-style">
     <ion-card-header>
       <ion-card-title>
-          TABLET HSM 16
+        TABLET HSM 16
       </ion-card-title>
       <!--PONTUAÇÃO-->
       <div *ngIf="rate==0">
         <ion-icon color="warning" name="star-outline" (click)="onRate(1)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(2)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(3)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
+        <ion-icon color="warning" name="star-outline" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning" name="star-outline" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning" name="star-outline" (click)="onRate(4)"></ion-icon>
 
       </div>
       <div *ngIf="rate==1">
-        <ion-icon color="warning"  name="star" (click)="onRate(1)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(2)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(3)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
-      
+        <ion-icon color="warning" name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon color="warning" name="star-outline" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning" name="star-outline" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning" name="star-outline" (click)="onRate(4)"></ion-icon>
+
       </div>
       <div *ngIf="rate==2">
-        <ion-icon color="warning"  name="star" (click)="onRate(1)"></ion-icon>
-        <ion-icon color="warning"  name="star" (click)="onRate(2)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(3)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
-    
-      </div>    
-      <div *ngIf="rate==3">
-        <ion-icon color="warning"  name="star" (click)="onRate(1)"></ion-icon>
-        <ion-icon color="warning"  name="star" (click)="onRate(2)"></ion-icon>
-        <ion-icon color="warning"  name="star" (click)="onRate(3)"></ion-icon>
-        <ion-icon color="warning"  name="star-outline" (click)="onRate(4)"></ion-icon>
-        
+        <ion-icon color="warning" name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon color="warning" name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning" name="star-outline" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning" name="star-outline" (click)="onRate(4)"></ion-icon>
+
       </div>
-  
+      <div *ngIf="rate==3">
+        <ion-icon color="warning" name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon color="warning" name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning" name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning" name="star-outline" (click)="onRate(4)"></ion-icon>
+
+      </div>
+
       <div *ngIf="rate==4">
         <ion-icon color="warning" name="star" (click)="onRate(1)"></ion-icon>
-        <ion-icon color="warning"  name="star" (click)="onRate(2)"></ion-icon>
-        <ion-icon color="warning"  name="star" (click)="onRate(3)"></ion-icon>
-        <ion-icon color="warning"  name="star" (click)="onRate(4)"></ion-icon>
-     
+        <ion-icon color="warning" name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon color="warning" name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon color="warning" name="star" (click)="onRate(4)"></ion-icon>
+
       </div>
 
       <ion-card-content>
-        <ion-slides #slider pager="true" [options]="slideOpts"  zoom (ionSlideDidChange)='ionSlideDidChange()'>
+        <ion-slides #slider pager="true" [options]="slideOpts" zoom (ionSlideDidChange)='ionSlideDidChange()'>
           <ion-slide>
             <img src="assets/tablet2.jpg" style="width:100%;height:auto">
           </ion-slide>
@@ -92,33 +92,37 @@
             <img src="assets/tablet4.jpg" style="width:100%;height:auto">
           </ion-slide>
         </ion-slides>
-        
+
         <!--ICONS + BOTÃO-->
-             <button style="background-color: white; margin-left: 10%;" *ngFor="let botaoestado of botaoestado"
+        <button style="background-color: white; margin-left: 10%;" *ngFor="let botaoestado of botaoestado"
           (click)="botaoestado.state = !botaoestado.state">
           <ion-icon name="heart" style="margin-left: 15%; " [class.isActive]="botaoestado.state">
           </ion-icon>
         </button>
-        <ion-icon  name="share-social-sharp" style=" color:black; margin-top: 5%; margin-left:25% ;"></ion-icon>
-        <ion-icon  name="cart" style=" color:black;margin-left: 30%;"></ion-icon>
-      
-        <ion-button id="1" #first ion-button color="roxo" (click)="btnActivate(first)"         
-          style="color: black; outline-color: black; font-size: 65%; "fill="outline" >
+        <ion-icon name="share-social-sharp" style=" color:black; margin-top: 5%; margin-left:25% ;"></ion-icon>
+        <ion-icon name="cart" style=" color:black;margin-left: 30%;"></ion-icon>
+
+        <ion-button id="1" #first ion-button color="roxo" (click)="btnActivate(first)"
+          style="color: black; outline-color: black; font-size: 65%; " fill="outline">
           FAVORITO </ion-button>
-        <ion-button color="roxo" style="color: black;border-bottom-color: black; outline-color: black; font-size: 65%;margin-left: 5%; "
+        <ion-button color="roxo"
+          style="color: black;border-bottom-color: black; outline-color: black; font-size: 65%;margin-left: 5%; "
           fill="outline">PARTILHAR</ion-button>
         <ion-button color="roxo" style="color: black; outline-color: black; font-size: 65%; margin-left: 6%;  "
-          fill="outline" >ADICIONAR</ion-button>
+          fill="outline">ADICIONAR</ion-button>
 
-          <ion-text style="margin-bottom: 10% ; color: black;">
-            <h2><p > <strong>SOBRE</strong></p> </h2> <h2>  Tablet HUAWEI MatePad <br>
-              10.4'' - 64 GB - 4 GB - Wi-Fi - Cinzento <br>
-              Vem com capa <br>
-              Android 10 AOSP e Huawei Mobile Services (HMS) <br>
-              Google Mobile Services (GMS) não está disponível.  </h2>
-            <p> Preço: 345,00€ ou em 3x sem juros</p>
-            </ion-text>
-       
+        <ion-text style="margin-bottom: 10% ; color: black;">
+          <h2>
+            <p> <strong>SOBRE</strong></p>
+          </h2>
+          <h2> Tablet HUAWEI MatePad <br>
+            10.4'' - 64 GB - 4 GB - Wi-Fi - Cinzento <br>
+            Vem com capa <br>
+            Android 10 AOSP e Huawei Mobile Services (HMS) <br>
+            Google Mobile Services (GMS) não está disponível. </h2>
+          <p> Preço: 345,00€ ou em 3x sem juros</p>
+        </ion-text>
+
       </ion-card-content>
     </ion-card-header>
   </ion-card>

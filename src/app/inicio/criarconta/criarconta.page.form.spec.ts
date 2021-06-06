@@ -1,20 +1,20 @@
 
 import { FormBuilder, FormGroup } from '@angular/forms';
-import{ CriarcontaPageForm} from './criarconta.page.form';
+import { CriarcontaPageForm } from './criarconta.page.form';
 
-describe (' CriarcontaPageForm',()=>{
+describe(' CriarcontaPageForm', () => {
 
-    let  criarcontaPageForm:  CriarcontaPageForm;
+    let criarcontaPageForm: CriarcontaPageForm;
     let form: FormGroup;
 
 
-    beforeEach(()=>{ //caso não seja um email mm, vai ser executada antes de cada teste
-        criarcontaPageForm= new  CriarcontaPageForm(new FormBuilder());
-       form =  criarcontaPageForm.createForm();
+    beforeEach(() => { //caso não seja um email mm, vai ser executada antes de cada teste
+        criarcontaPageForm = new CriarcontaPageForm(new FormBuilder());
+        form = criarcontaPageForm.createForm();
 
     });
 
-    it('should create count form empty', ()=> {
+    it('should create count form empty', () => {
         expect(form).not.toBeNull();
         expect(form.get('nome')).not.toBeNull();
         expect(form.get('nome').value).toEqual('');
@@ -31,23 +31,24 @@ describe (' CriarcontaPageForm',()=>{
 
     });
 
-    it('should gave email invalid if email is not invalid', ()=>{
+    it('should gave email invalid if email is not invalid', () => {
         form.get('email').setValue('Email invalido');
 
         expect(form.get('email').valid).toBeFalsy();
     });
-    it('should have valid if email is valid',()=> {
+    it('should have valid if email is valid', () => {
         form.get('email').setValue('valid@email.com');
 
-        expect(form.get('email').valid).toBeTruthy();
+        expect(form.get('email').valid).toBeTruthy();  //validar caso seja verdadeira
 
     });
+    //Exemplo de como o utilizador vai inserir os dados e como o sistema deve comparar caso haja algum erro ao inserir os dados
     it('should have a valid form', () => {
         form.get('nome').setValue('anyNome');
         form.get('apelido').setValue('anyApelido');
-        form.get('email').setValue('valid@email.com');
-         form.get('password').setValue('anyPassword');
+        form.get('email').setValue('valid@email.com'); //todo o email tem que ter @
+        form.get('password').setValue('anyPassword');
 
-         expect(form.valid).toBeTruthy();
+        expect(form.valid).toBeTruthy();
     });
 });

@@ -30,14 +30,14 @@ export class AspiradorPage implements OnInit {
 
 
   public slideOpts =
-  //incializar o slide
-  {
-    initialSlide: 1,
-    speed: 400,
-    //zoom na fotografia
-    zoom:{
-      maxRatio:2
-    }
+    //incializar o slide
+    {
+      initialSlide: 1,
+      speed: 400,
+      //zoom na fotografia
+      zoom: {
+        maxRatio: 2
+      }
     };
 
 
@@ -100,7 +100,7 @@ export class AspiradorPage implements OnInit {
     if (ionicButton.color === 'dark') { ionicButton.color = 'danger'; }
     else { ionicButton.color = 'dark'; }
   }
-//Avaliação
+  //Avaliação
   onRate(rate) {
     console.log(rate);
     this.rate = rate;

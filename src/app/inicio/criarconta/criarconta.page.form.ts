@@ -9,6 +9,8 @@ export class CriarcontaPageForm{
         this.formBuilder = formBuilder;
 
     }
+
+    //Formulário com requerimentos, ou seja obrifa o utilizador inserir alguns campos
     createForm(): FormGroup{
         return this.formBuilder.group({
             nome:['', [Validators.required]],

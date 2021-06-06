@@ -12,7 +12,8 @@ import { CriarcontaPageForm } from './criarconta.page.form';
 export class CriarcontaPage implements OnInit {
   form: FormGroup;
   constructor(public nav: NavController, public alertCtrl: AlertController,private  formBuilder: FormBuilder) { }
-
+//botao de resgistar com alerta
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   async Registosuc() {
     const alert = await this.alertCtrl.create({
 
@@ -20,14 +21,14 @@ export class CriarcontaPage implements OnInit {
       message: 'Escolha uma das ações',
       backdropDismiss: false,
       buttons: [{
-        text: 'Continuar compras',
+        text: 'Continuar compras',   //opção caso o utilizador selecione continuar compras
         handler: () => {
           this.nav.navigateForward('entrada');
         }
       },
 
       {
-        text: 'Cancelar',
+        text: 'Cancelar',   //opção caso selecione canecelar
         handler: () => {
 
         }
@@ -38,7 +39,7 @@ export class CriarcontaPage implements OnInit {
   }
 
   ngOnInit() {
-    this.form=new CriarcontaPageForm(this.formBuilder).createForm();
+    this.form=new CriarcontaPageForm(this.formBuilder).createForm(); //criar o form
   }
 
   voltar() {

@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { CartPage } from './cart.page';
 
 describe('CartPage', () => {
+ //component da pagina do card
   let component: CartPage;
   let fixture: ComponentFixture<CartPage>;
 
